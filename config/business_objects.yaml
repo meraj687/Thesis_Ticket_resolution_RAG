@@ -1,0 +1,9 @@
+business_objects:
+  - Vendor
+  - Supplier
+  - Customer
+  - Business Partner
+  - Material
+  - Cost Center
+  - Profit Center
+  - GL Account

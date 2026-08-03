@@ -1,0 +1,35 @@
+departments:
+  Replication:
+    department: SAP Master Data Integration
+
+    support_team: MDG Integration Support
+
+    resolver_role: SAP MDG Technical Consultant
+
+  Workflow:
+    department: SAP Workflow Team
+
+    support_team: Workflow Support
+
+    resolver_role: SAP Workflow Consultant
+
+  Validation:
+    department: SAP MDG Functional Team
+
+    support_team: MDG Functional Support
+
+    resolver_role: SAP MDG Functional Consultant
+
+  Data Quality:
+    department: Master Data Governance
+
+    support_team: Data Steward Team
+
+    resolver_role: Data Steward
+
+  Search:
+    department: SAP Basis
+
+    support_team: Search Administration
+
+    resolver_role: SAP Basis Consultant

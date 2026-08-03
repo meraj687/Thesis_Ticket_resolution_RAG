@@ -1,0 +1,1001 @@
+ticket_id,description,category,priority,resolution
+1,Business partner search returns no results,Search,High,Rebuild search index
+2,Mandatory field missing,Validation,Low,Provide mandatory values
+3,Search performance is slow,Search,High,Optimize HANA indexes
+4,Approval agent not assigned,Workflow,High,Update workflow configuration
+5,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+6,Customer replication failed,Replication,Critical,Restart replication service
+7,Workflow approval stuck,Workflow,High,Restart workflow
+8,Approval agent not assigned,Workflow,Low,Update workflow configuration
+9,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+10,Invalid business rule detected,Validation,Medium,Review validation logic
+11,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+12,Mandatory field missing,Validation,High,Provide mandatory values
+13,Material type validation error,Validation,Critical,Correct validation rule
+14,Replication queue blocked,Replication,High,Clear outbound queue
+15,Material master not replicated to ECC,Replication,High,Check DRF configuration
+16,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+17,Change request activation failed,Workflow,Critical,Activate change request manually
+18,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+19,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+20,Duplicate supplier record created,Data Quality,Critical,Run duplicate check process
+21,Workflow approval stuck,Workflow,Critical,Restart workflow
+22,Replication queue blocked,Replication,Low,Clear outbound queue
+23,Mandatory field missing,Validation,Low,Provide mandatory values
+24,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+25,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+26,Customer replication failed,Replication,High,Restart replication service
+27,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+28,Mandatory field missing,Validation,Low,Provide mandatory values
+29,Mandatory field missing,Validation,Critical,Provide mandatory values
+30,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+31,Change request activation failed,Workflow,High,Activate change request manually
+32,Invalid business rule detected,Validation,High,Review validation logic
+33,Search returns incorrect results,Search,Critical,Synchronize search index
+34,Replication queue blocked,Replication,Medium,Clear outbound queue
+35,Approval agent not assigned,Workflow,Low,Update workflow configuration
+36,Change request activation failed,Workflow,High,Activate change request manually
+37,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+38,Invalid business rule detected,Validation,High,Review validation logic
+39,Customer validation failed,Validation,Critical,Review BRF+ rules
+40,Customer validation failed,Validation,High,Review BRF+ rules
+41,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+42,Search index corrupted,Search,Medium,Recreate search index
+43,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+44,Invalid business rule detected,Validation,Low,Review validation logic
+45,Replication queue blocked,Replication,Critical,Clear outbound queue
+46,Business partner search returns no results,Search,Low,Rebuild search index
+47,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+48,Search returns incorrect results,Search,Critical,Synchronize search index
+49,Search performance is slow,Search,Critical,Optimize HANA indexes
+50,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+51,Search returns incorrect results,Search,High,Synchronize search index
+52,Search performance is slow,Search,Medium,Optimize HANA indexes
+53,Material type validation error,Validation,Low,Correct validation rule
+54,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+55,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+56,Workflow approval stuck,Workflow,Medium,Restart workflow
+57,Mandatory field missing,Validation,High,Provide mandatory values
+58,Customer replication failed,Replication,High,Restart replication service
+59,Customer validation failed,Validation,Critical,Review BRF+ rules
+60,Workflow timeout occurred,Workflow,High,Review workflow logs
+61,Search index corrupted,Search,Medium,Recreate search index
+62,Invalid business rule detected,Validation,Medium,Review validation logic
+63,Vendor replication failed,Replication,Critical,Verify SOA services
+64,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+65,Mandatory field missing,Validation,High,Provide mandatory values
+66,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+67,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+68,Invalid business rule detected,Validation,Medium,Review validation logic
+69,Business partner search returns no results,Search,Critical,Rebuild search index
+70,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+71,Material type validation error,Validation,Medium,Correct validation rule
+72,Material type validation error,Validation,Low,Correct validation rule
+73,Customer replication failed,Replication,Low,Restart replication service
+74,Search performance is slow,Search,Low,Optimize HANA indexes
+75,Vendor replication failed,Replication,Medium,Verify SOA services
+76,Search returns incorrect results,Search,High,Synchronize search index
+77,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+78,Search returns incorrect results,Search,Low,Synchronize search index
+79,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+80,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+81,Duplicate supplier record created,Data Quality,High,Run duplicate check process
+82,Replication queue blocked,Replication,Medium,Clear outbound queue
+83,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+84,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+85,Material type validation error,Validation,Medium,Correct validation rule
+86,Search performance is slow,Search,High,Optimize HANA indexes
+87,Mandatory field missing,Validation,Low,Provide mandatory values
+88,Customer validation failed,Validation,Medium,Review BRF+ rules
+89,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+90,Business partner search returns no results,Search,Low,Rebuild search index
+91,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+92,Search returns incorrect results,Search,Low,Synchronize search index
+93,Business partner search returns no results,Search,Low,Rebuild search index
+94,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+95,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+96,Customer replication failed,Replication,High,Restart replication service
+97,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+98,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+99,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+100,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+101,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+102,Search returns incorrect results,Search,Critical,Synchronize search index
+103,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+104,Material type validation error,Validation,High,Correct validation rule
+105,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+106,Approval agent not assigned,Workflow,High,Update workflow configuration
+107,Customer replication failed,Replication,Medium,Restart replication service
+108,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+109,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+110,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+111,Invalid business rule detected,Validation,High,Review validation logic
+112,Search returns incorrect results,Search,Critical,Synchronize search index
+113,Search performance is slow,Search,High,Optimize HANA indexes
+114,Search returns incorrect results,Search,High,Synchronize search index
+115,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+116,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+117,Mandatory field missing,Validation,Low,Provide mandatory values
+118,Material type validation error,Validation,High,Correct validation rule
+119,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+120,Search returns incorrect results,Search,Low,Synchronize search index
+121,Replication queue blocked,Replication,Low,Clear outbound queue
+122,Material master not replicated to ECC,Replication,High,Check DRF configuration
+123,Customer validation failed,Validation,High,Review BRF+ rules
+124,Change request activation failed,Workflow,High,Activate change request manually
+125,Replication queue blocked,Replication,Critical,Clear outbound queue
+126,Customer replication failed,Replication,Low,Restart replication service
+127,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+128,Customer replication failed,Replication,High,Restart replication service
+129,Customer replication failed,Replication,Medium,Restart replication service
+130,Search index corrupted,Search,Critical,Recreate search index
+131,Mandatory field missing,Validation,Critical,Provide mandatory values
+132,Search returns incorrect results,Search,Medium,Synchronize search index
+133,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+134,Customer replication failed,Replication,Low,Restart replication service
+135,Change request activation failed,Workflow,Low,Activate change request manually
+136,Customer validation failed,Validation,Low,Review BRF+ rules
+137,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+138,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+139,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+140,Customer validation failed,Validation,Critical,Review BRF+ rules
+141,Invalid business rule detected,Validation,Critical,Review validation logic
+142,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+143,Material master not replicated to ECC,Replication,High,Check DRF configuration
+144,Workflow timeout occurred,Workflow,Low,Review workflow logs
+145,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+146,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+147,Replication queue blocked,Replication,High,Clear outbound queue
+148,Business partner search returns no results,Search,High,Rebuild search index
+149,Vendor replication failed,Replication,Critical,Verify SOA services
+150,Change request activation failed,Workflow,Critical,Activate change request manually
+151,Business partner search returns no results,Search,Medium,Rebuild search index
+152,Duplicate customer detected,Data Quality,Critical,Merge duplicate customer records
+153,Replication queue blocked,Replication,Low,Clear outbound queue
+154,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+155,Search returns incorrect results,Search,Critical,Synchronize search index
+156,Search index corrupted,Search,High,Recreate search index
+157,Material type validation error,Validation,High,Correct validation rule
+158,Mandatory field missing,Validation,Critical,Provide mandatory values
+159,Business partner search returns no results,Search,Critical,Rebuild search index
+160,Replication queue blocked,Replication,Low,Clear outbound queue
+161,Workflow timeout occurred,Workflow,High,Review workflow logs
+162,Vendor replication failed,Replication,High,Verify SOA services
+163,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+164,Search index corrupted,Search,High,Recreate search index
+165,Workflow approval stuck,Workflow,Medium,Restart workflow
+166,Business partner search returns no results,Search,Medium,Rebuild search index
+167,Invalid business rule detected,Validation,Low,Review validation logic
+168,Search index corrupted,Search,Low,Recreate search index
+169,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+170,Material type validation error,Validation,High,Correct validation rule
+171,Search index corrupted,Search,High,Recreate search index
+172,Mandatory field missing,Validation,High,Provide mandatory values
+173,Customer validation failed,Validation,Critical,Review BRF+ rules
+174,Replication queue blocked,Replication,Critical,Clear outbound queue
+175,Workflow approval stuck,Workflow,Medium,Restart workflow
+176,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+177,Material type validation error,Validation,Medium,Correct validation rule
+178,Approval agent not assigned,Workflow,Low,Update workflow configuration
+179,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+180,Search index corrupted,Search,High,Recreate search index
+181,Search index corrupted,Search,High,Recreate search index
+182,Workflow approval stuck,Workflow,Critical,Restart workflow
+183,Invalid business rule detected,Validation,High,Review validation logic
+184,Workflow approval stuck,Workflow,Medium,Restart workflow
+185,Approval agent not assigned,Workflow,Low,Update workflow configuration
+186,Business partner search returns no results,Search,High,Rebuild search index
+187,Customer replication failed,Replication,Low,Restart replication service
+188,Workflow approval stuck,Workflow,Low,Restart workflow
+189,Business partner search returns no results,Search,Medium,Rebuild search index
+190,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+191,Replication queue blocked,Replication,Low,Clear outbound queue
+192,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+193,Search returns incorrect results,Search,High,Synchronize search index
+194,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+195,Customer replication failed,Replication,Critical,Restart replication service
+196,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+197,Search index corrupted,Search,High,Recreate search index
+198,Mandatory field missing,Validation,Low,Provide mandatory values
+199,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+200,Customer validation failed,Validation,Low,Review BRF+ rules
+201,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+202,Search index corrupted,Search,Low,Recreate search index
+203,Workflow timeout occurred,Workflow,Low,Review workflow logs
+204,Change request activation failed,Workflow,Medium,Activate change request manually
+205,Customer validation failed,Validation,Medium,Review BRF+ rules
+206,Search returns incorrect results,Search,Critical,Synchronize search index
+207,Customer replication failed,Replication,Medium,Restart replication service
+208,Business partner search returns no results,Search,High,Rebuild search index
+209,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+210,Workflow approval stuck,Workflow,Medium,Restart workflow
+211,Replication queue blocked,Replication,Low,Clear outbound queue
+212,Vendor replication failed,Replication,Medium,Verify SOA services
+213,Approval agent not assigned,Workflow,High,Update workflow configuration
+214,Vendor replication failed,Replication,Low,Verify SOA services
+215,Search performance is slow,Search,Medium,Optimize HANA indexes
+216,Business partner search returns no results,Search,Low,Rebuild search index
+217,Customer replication failed,Replication,Critical,Restart replication service
+218,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+219,Search performance is slow,Search,Low,Optimize HANA indexes
+220,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+221,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+222,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+223,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+224,Mandatory field missing,Validation,Medium,Provide mandatory values
+225,Vendor replication failed,Replication,Critical,Verify SOA services
+226,Customer replication failed,Replication,High,Restart replication service
+227,Workflow timeout occurred,Workflow,High,Review workflow logs
+228,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+229,Customer replication failed,Replication,Low,Restart replication service
+230,Mandatory field missing,Validation,Low,Provide mandatory values
+231,Workflow approval stuck,Workflow,Critical,Restart workflow
+232,Replication queue blocked,Replication,Critical,Clear outbound queue
+233,Vendor replication failed,Replication,Low,Verify SOA services
+234,Workflow approval stuck,Workflow,Low,Restart workflow
+235,Search index corrupted,Search,Critical,Recreate search index
+236,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+237,Invalid business rule detected,Validation,High,Review validation logic
+238,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+239,Invalid business rule detected,Validation,High,Review validation logic
+240,Vendor replication failed,Replication,High,Verify SOA services
+241,Workflow approval stuck,Workflow,High,Restart workflow
+242,Invalid business rule detected,Validation,Critical,Review validation logic
+243,Customer replication failed,Replication,Low,Restart replication service
+244,Business partner search returns no results,Search,Medium,Rebuild search index
+245,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+246,Duplicate supplier record created,Data Quality,High,Run duplicate check process
+247,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+248,Vendor replication failed,Replication,Low,Verify SOA services
+249,Material type validation error,Validation,Critical,Correct validation rule
+250,Customer replication failed,Replication,High,Restart replication service
+251,Search returns incorrect results,Search,Low,Synchronize search index
+252,Vendor replication failed,Replication,High,Verify SOA services
+253,Replication queue blocked,Replication,High,Clear outbound queue
+254,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+255,Search returns incorrect results,Search,Medium,Synchronize search index
+256,Search performance is slow,Search,Critical,Optimize HANA indexes
+257,Mandatory field missing,Validation,High,Provide mandatory values
+258,Workflow approval stuck,Workflow,Low,Restart workflow
+259,Material type validation error,Validation,Low,Correct validation rule
+260,Workflow timeout occurred,Workflow,High,Review workflow logs
+261,Search returns incorrect results,Search,High,Synchronize search index
+262,Customer replication failed,Replication,High,Restart replication service
+263,Search performance is slow,Search,Medium,Optimize HANA indexes
+264,Customer replication failed,Replication,Critical,Restart replication service
+265,Workflow timeout occurred,Workflow,Low,Review workflow logs
+266,Customer replication failed,Replication,Low,Restart replication service
+267,Material type validation error,Validation,Medium,Correct validation rule
+268,Change request activation failed,Workflow,Low,Activate change request manually
+269,Replication queue blocked,Replication,Critical,Clear outbound queue
+270,Customer validation failed,Validation,High,Review BRF+ rules
+271,Search performance is slow,Search,High,Optimize HANA indexes
+272,Replication queue blocked,Replication,Critical,Clear outbound queue
+273,Invalid business rule detected,Validation,Low,Review validation logic
+274,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+275,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+276,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+277,Vendor replication failed,Replication,Critical,Verify SOA services
+278,Business partner search returns no results,Search,Medium,Rebuild search index
+279,Approval agent not assigned,Workflow,Medium,Update workflow configuration
+280,Search returns incorrect results,Search,Critical,Synchronize search index
+281,Invalid business rule detected,Validation,High,Review validation logic
+282,Business partner search returns no results,Search,Low,Rebuild search index
+283,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+284,Mandatory field missing,Validation,Low,Provide mandatory values
+285,Vendor replication failed,Replication,High,Verify SOA services
+286,Invalid business rule detected,Validation,High,Review validation logic
+287,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+288,Customer validation failed,Validation,Critical,Review BRF+ rules
+289,Search index corrupted,Search,Low,Recreate search index
+290,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+291,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+292,Customer validation failed,Validation,High,Review BRF+ rules
+293,Search performance is slow,Search,Critical,Optimize HANA indexes
+294,Invalid business rule detected,Validation,Critical,Review validation logic
+295,Search index corrupted,Search,Medium,Recreate search index
+296,Customer validation failed,Validation,Low,Review BRF+ rules
+297,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+298,Replication queue blocked,Replication,Medium,Clear outbound queue
+299,Workflow approval stuck,Workflow,Medium,Restart workflow
+300,Change request activation failed,Workflow,Low,Activate change request manually
+301,Workflow timeout occurred,Workflow,High,Review workflow logs
+302,Vendor replication failed,Replication,Low,Verify SOA services
+303,Search returns incorrect results,Search,High,Synchronize search index
+304,Replication queue blocked,Replication,Critical,Clear outbound queue
+305,Material master not replicated to ECC,Replication,High,Check DRF configuration
+306,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+307,Search returns incorrect results,Search,Low,Synchronize search index
+308,Mandatory field missing,Validation,High,Provide mandatory values
+309,Material type validation error,Validation,Low,Correct validation rule
+310,Search performance is slow,Search,Medium,Optimize HANA indexes
+311,Material master not replicated to ECC,Replication,High,Check DRF configuration
+312,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+313,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+314,Search performance is slow,Search,Low,Optimize HANA indexes
+315,Customer replication failed,Replication,High,Restart replication service
+316,Mandatory field missing,Validation,High,Provide mandatory values
+317,Search performance is slow,Search,High,Optimize HANA indexes
+318,Material master not replicated to ECC,Replication,High,Check DRF configuration
+319,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+320,Duplicate supplier record created,Data Quality,Critical,Run duplicate check process
+321,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+322,Search returns incorrect results,Search,Medium,Synchronize search index
+323,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+324,Customer validation failed,Validation,High,Review BRF+ rules
+325,Search index corrupted,Search,Low,Recreate search index
+326,Customer replication failed,Replication,Critical,Restart replication service
+327,Business partner search returns no results,Search,Critical,Rebuild search index
+328,Vendor replication failed,Replication,High,Verify SOA services
+329,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+330,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+331,Search index corrupted,Search,Medium,Recreate search index
+332,Mandatory field missing,Validation,Critical,Provide mandatory values
+333,Search returns incorrect results,Search,Low,Synchronize search index
+334,Material master not replicated to ECC,Replication,High,Check DRF configuration
+335,Material master not replicated to ECC,Replication,High,Check DRF configuration
+336,Workflow approval stuck,Workflow,Medium,Restart workflow
+337,Customer replication failed,Replication,High,Restart replication service
+338,Change request activation failed,Workflow,Critical,Activate change request manually
+339,Duplicate customer detected,Data Quality,Critical,Merge duplicate customer records
+340,Replication queue blocked,Replication,Medium,Clear outbound queue
+341,Business partner search returns no results,Search,High,Rebuild search index
+342,Vendor replication failed,Replication,Low,Verify SOA services
+343,Customer replication failed,Replication,Low,Restart replication service
+344,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+345,Invalid business rule detected,Validation,Medium,Review validation logic
+346,Business partner search returns no results,Search,High,Rebuild search index
+347,Customer validation failed,Validation,High,Review BRF+ rules
+348,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+349,Invalid business rule detected,Validation,Medium,Review validation logic
+350,Invalid business rule detected,Validation,High,Review validation logic
+351,Customer validation failed,Validation,Critical,Review BRF+ rules
+352,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+353,Customer replication failed,Replication,High,Restart replication service
+354,Customer validation failed,Validation,High,Review BRF+ rules
+355,Search returns incorrect results,Search,Low,Synchronize search index
+356,Vendor replication failed,Replication,Critical,Verify SOA services
+357,Customer validation failed,Validation,Critical,Review BRF+ rules
+358,Customer validation failed,Validation,Low,Review BRF+ rules
+359,Search returns incorrect results,Search,High,Synchronize search index
+360,Invalid business rule detected,Validation,Medium,Review validation logic
+361,Replication queue blocked,Replication,Medium,Clear outbound queue
+362,Mandatory field missing,Validation,Low,Provide mandatory values
+363,Customer replication failed,Replication,Medium,Restart replication service
+364,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+365,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+366,Customer validation failed,Validation,Medium,Review BRF+ rules
+367,Customer validation failed,Validation,Critical,Review BRF+ rules
+368,Business partner search returns no results,Search,High,Rebuild search index
+369,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+370,Workflow timeout occurred,Workflow,High,Review workflow logs
+371,Duplicate supplier record created,Data Quality,High,Run duplicate check process
+372,Replication queue blocked,Replication,Low,Clear outbound queue
+373,Business partner search returns no results,Search,Low,Rebuild search index
+374,Material type validation error,Validation,Critical,Correct validation rule
+375,Search performance is slow,Search,Critical,Optimize HANA indexes
+376,Material type validation error,Validation,Low,Correct validation rule
+377,Vendor replication failed,Replication,Low,Verify SOA services
+378,Material type validation error,Validation,Critical,Correct validation rule
+379,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+380,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+381,Workflow timeout occurred,Workflow,Low,Review workflow logs
+382,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+383,Mandatory field missing,Validation,Medium,Provide mandatory values
+384,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+385,Invalid business rule detected,Validation,Critical,Review validation logic
+386,Search index corrupted,Search,High,Recreate search index
+387,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+388,Approval agent not assigned,Workflow,Medium,Update workflow configuration
+389,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+390,Material master not replicated to ECC,Replication,High,Check DRF configuration
+391,Search performance is slow,Search,High,Optimize HANA indexes
+392,Vendor replication failed,Replication,High,Verify SOA services
+393,Workflow approval stuck,Workflow,Critical,Restart workflow
+394,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+395,Invalid business rule detected,Validation,Medium,Review validation logic
+396,Workflow approval stuck,Workflow,Medium,Restart workflow
+397,Material type validation error,Validation,Low,Correct validation rule
+398,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+399,Customer replication failed,Replication,Medium,Restart replication service
+400,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+401,Approval agent not assigned,Workflow,Low,Update workflow configuration
+402,Change request activation failed,Workflow,High,Activate change request manually
+403,Customer replication failed,Replication,Medium,Restart replication service
+404,Search returns incorrect results,Search,Low,Synchronize search index
+405,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+406,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+407,Invalid business rule detected,Validation,High,Review validation logic
+408,Duplicate customer detected,Data Quality,Critical,Merge duplicate customer records
+409,Workflow approval stuck,Workflow,Critical,Restart workflow
+410,Search performance is slow,Search,Low,Optimize HANA indexes
+411,Workflow timeout occurred,Workflow,Low,Review workflow logs
+412,Invalid business rule detected,Validation,High,Review validation logic
+413,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+414,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+415,Workflow approval stuck,Workflow,High,Restart workflow
+416,Material master not replicated to ECC,Replication,High,Check DRF configuration
+417,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+418,Material type validation error,Validation,Medium,Correct validation rule
+419,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+420,Search returns incorrect results,Search,Medium,Synchronize search index
+421,Mandatory field missing,Validation,Medium,Provide mandatory values
+422,Customer replication failed,Replication,Medium,Restart replication service
+423,Material type validation error,Validation,High,Correct validation rule
+424,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+425,Customer validation failed,Validation,Low,Review BRF+ rules
+426,Material type validation error,Validation,Medium,Correct validation rule
+427,Approval agent not assigned,Workflow,Low,Update workflow configuration
+428,Change request activation failed,Workflow,Medium,Activate change request manually
+429,Approval agent not assigned,Workflow,Low,Update workflow configuration
+430,Replication queue blocked,Replication,High,Clear outbound queue
+431,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+432,Business partner search returns no results,Search,Low,Rebuild search index
+433,Search index corrupted,Search,Medium,Recreate search index
+434,Approval agent not assigned,Workflow,High,Update workflow configuration
+435,Change request activation failed,Workflow,Medium,Activate change request manually
+436,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+437,Mandatory field missing,Validation,Low,Provide mandatory values
+438,Change request activation failed,Workflow,Medium,Activate change request manually
+439,Business partner search returns no results,Search,Medium,Rebuild search index
+440,Material type validation error,Validation,Critical,Correct validation rule
+441,Search performance is slow,Search,Critical,Optimize HANA indexes
+442,Search returns incorrect results,Search,High,Synchronize search index
+443,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+444,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+445,Invalid business rule detected,Validation,Critical,Review validation logic
+446,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+447,Replication queue blocked,Replication,Low,Clear outbound queue
+448,Search returns incorrect results,Search,Low,Synchronize search index
+449,Business partner search returns no results,Search,Low,Rebuild search index
+450,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+451,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+452,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+453,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+454,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+455,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+456,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+457,Customer replication failed,Replication,High,Restart replication service
+458,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+459,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+460,Business partner search returns no results,Search,High,Rebuild search index
+461,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+462,Search returns incorrect results,Search,Critical,Synchronize search index
+463,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+464,Invalid business rule detected,Validation,Medium,Review validation logic
+465,Mandatory field missing,Validation,Medium,Provide mandatory values
+466,Material master not replicated to ECC,Replication,High,Check DRF configuration
+467,Customer replication failed,Replication,Low,Restart replication service
+468,Search performance is slow,Search,Medium,Optimize HANA indexes
+469,Vendor replication failed,Replication,Low,Verify SOA services
+470,Material type validation error,Validation,High,Correct validation rule
+471,Change request activation failed,Workflow,Medium,Activate change request manually
+472,Business partner search returns no results,Search,Critical,Rebuild search index
+473,Workflow approval stuck,Workflow,Medium,Restart workflow
+474,Material type validation error,Validation,Low,Correct validation rule
+475,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+476,Search index corrupted,Search,Critical,Recreate search index
+477,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+478,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+479,Material master not replicated to ECC,Replication,High,Check DRF configuration
+480,Mandatory field missing,Validation,High,Provide mandatory values
+481,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+482,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+483,Search performance is slow,Search,Critical,Optimize HANA indexes
+484,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+485,Search performance is slow,Search,High,Optimize HANA indexes
+486,Workflow approval stuck,Workflow,Medium,Restart workflow
+487,Material master not replicated to ECC,Replication,High,Check DRF configuration
+488,Duplicate supplier record created,Data Quality,Critical,Run duplicate check process
+489,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+490,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+491,Change request activation failed,Workflow,Critical,Activate change request manually
+492,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+493,Search index corrupted,Search,Critical,Recreate search index
+494,Invalid business rule detected,Validation,Medium,Review validation logic
+495,Search index corrupted,Search,High,Recreate search index
+496,Mandatory field missing,Validation,Critical,Provide mandatory values
+497,Search performance is slow,Search,High,Optimize HANA indexes
+498,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+499,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+500,Business partner search returns no results,Search,Low,Rebuild search index
+501,Change request activation failed,Workflow,Medium,Activate change request manually
+502,Customer validation failed,Validation,Critical,Review BRF+ rules
+503,Material type validation error,Validation,Medium,Correct validation rule
+504,Customer replication failed,Replication,Low,Restart replication service
+505,Approval agent not assigned,Workflow,Medium,Update workflow configuration
+506,Search index corrupted,Search,High,Recreate search index
+507,Mandatory field missing,Validation,Medium,Provide mandatory values
+508,Customer validation failed,Validation,Medium,Review BRF+ rules
+509,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+510,Search index corrupted,Search,Medium,Recreate search index
+511,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+512,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+513,Mandatory field missing,Validation,Medium,Provide mandatory values
+514,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+515,Change request activation failed,Workflow,Medium,Activate change request manually
+516,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+517,Workflow timeout occurred,Workflow,Low,Review workflow logs
+518,Invalid business rule detected,Validation,Critical,Review validation logic
+519,Duplicate customer detected,Data Quality,Critical,Merge duplicate customer records
+520,Material type validation error,Validation,High,Correct validation rule
+521,Replication queue blocked,Replication,Critical,Clear outbound queue
+522,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+523,Change request activation failed,Workflow,Medium,Activate change request manually
+524,Material type validation error,Validation,Low,Correct validation rule
+525,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+526,Workflow timeout occurred,Workflow,Low,Review workflow logs
+527,Invalid business rule detected,Validation,Medium,Review validation logic
+528,Invalid business rule detected,Validation,Low,Review validation logic
+529,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+530,Workflow approval stuck,Workflow,Medium,Restart workflow
+531,Approval agent not assigned,Workflow,Low,Update workflow configuration
+532,Invalid business rule detected,Validation,Critical,Review validation logic
+533,Change request activation failed,Workflow,Medium,Activate change request manually
+534,Workflow approval stuck,Workflow,Low,Restart workflow
+535,Search returns incorrect results,Search,Low,Synchronize search index
+536,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+537,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+538,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+539,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+540,Customer validation failed,Validation,Medium,Review BRF+ rules
+541,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+542,Vendor replication failed,Replication,Low,Verify SOA services
+543,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+544,Workflow timeout occurred,Workflow,Low,Review workflow logs
+545,Approval agent not assigned,Workflow,High,Update workflow configuration
+546,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+547,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+548,Search performance is slow,Search,Medium,Optimize HANA indexes
+549,Search performance is slow,Search,High,Optimize HANA indexes
+550,Search returns incorrect results,Search,Medium,Synchronize search index
+551,Business partner search returns no results,Search,High,Rebuild search index
+552,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+553,Business partner search returns no results,Search,Low,Rebuild search index
+554,Replication queue blocked,Replication,Critical,Clear outbound queue
+555,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+556,Customer replication failed,Replication,Medium,Restart replication service
+557,Replication queue blocked,Replication,Low,Clear outbound queue
+558,Search performance is slow,Search,Low,Optimize HANA indexes
+559,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+560,Vendor replication failed,Replication,High,Verify SOA services
+561,Business partner search returns no results,Search,Critical,Rebuild search index
+562,Vendor replication failed,Replication,Critical,Verify SOA services
+563,Approval agent not assigned,Workflow,Low,Update workflow configuration
+564,Workflow timeout occurred,Workflow,High,Review workflow logs
+565,Search index corrupted,Search,High,Recreate search index
+566,Customer replication failed,Replication,Low,Restart replication service
+567,Replication queue blocked,Replication,Low,Clear outbound queue
+568,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+569,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+570,Search returns incorrect results,Search,Medium,Synchronize search index
+571,Change request activation failed,Workflow,Low,Activate change request manually
+572,Replication queue blocked,Replication,Critical,Clear outbound queue
+573,Search returns incorrect results,Search,High,Synchronize search index
+574,Customer replication failed,Replication,Critical,Restart replication service
+575,Search returns incorrect results,Search,Critical,Synchronize search index
+576,Search returns incorrect results,Search,Low,Synchronize search index
+577,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+578,Customer validation failed,Validation,Low,Review BRF+ rules
+579,Business partner search returns no results,Search,Medium,Rebuild search index
+580,Business partner search returns no results,Search,Low,Rebuild search index
+581,Material type validation error,Validation,Critical,Correct validation rule
+582,Customer validation failed,Validation,Medium,Review BRF+ rules
+583,Vendor replication failed,Replication,Low,Verify SOA services
+584,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+585,Workflow approval stuck,Workflow,Low,Restart workflow
+586,Search performance is slow,Search,Low,Optimize HANA indexes
+587,Approval agent not assigned,Workflow,Low,Update workflow configuration
+588,Customer replication failed,Replication,Low,Restart replication service
+589,Material type validation error,Validation,Medium,Correct validation rule
+590,Mandatory field missing,Validation,Medium,Provide mandatory values
+591,Material type validation error,Validation,Medium,Correct validation rule
+592,Replication queue blocked,Replication,High,Clear outbound queue
+593,Business partner search returns no results,Search,High,Rebuild search index
+594,Replication queue blocked,Replication,Low,Clear outbound queue
+595,Search returns incorrect results,Search,Critical,Synchronize search index
+596,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+597,Vendor replication failed,Replication,Low,Verify SOA services
+598,Approval agent not assigned,Workflow,High,Update workflow configuration
+599,Invalid business rule detected,Validation,Medium,Review validation logic
+600,Vendor replication failed,Replication,Medium,Verify SOA services
+601,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+602,Mandatory field missing,Validation,High,Provide mandatory values
+603,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+604,Replication queue blocked,Replication,Low,Clear outbound queue
+605,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+606,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+607,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+608,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+609,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+610,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+611,Search performance is slow,Search,Low,Optimize HANA indexes
+612,Vendor replication failed,Replication,Medium,Verify SOA services
+613,Search performance is slow,Search,Medium,Optimize HANA indexes
+614,Business partner search returns no results,Search,Critical,Rebuild search index
+615,Workflow approval stuck,Workflow,Low,Restart workflow
+616,Search index corrupted,Search,Critical,Recreate search index
+617,Search returns incorrect results,Search,Medium,Synchronize search index
+618,Business partner search returns no results,Search,Medium,Rebuild search index
+619,Vendor replication failed,Replication,Low,Verify SOA services
+620,Invalid business rule detected,Validation,Critical,Review validation logic
+621,Workflow approval stuck,Workflow,High,Restart workflow
+622,Customer validation failed,Validation,Low,Review BRF+ rules
+623,Duplicate supplier record created,Data Quality,Critical,Run duplicate check process
+624,Mandatory field missing,Validation,Medium,Provide mandatory values
+625,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+626,Customer replication failed,Replication,Critical,Restart replication service
+627,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+628,Customer replication failed,Replication,Low,Restart replication service
+629,Approval agent not assigned,Workflow,Low,Update workflow configuration
+630,Customer replication failed,Replication,High,Restart replication service
+631,Customer validation failed,Validation,Low,Review BRF+ rules
+632,Search index corrupted,Search,Low,Recreate search index
+633,Search performance is slow,Search,Low,Optimize HANA indexes
+634,Replication queue blocked,Replication,Medium,Clear outbound queue
+635,Change request activation failed,Workflow,Critical,Activate change request manually
+636,Workflow approval stuck,Workflow,Critical,Restart workflow
+637,Search index corrupted,Search,Medium,Recreate search index
+638,Material master not replicated to ECC,Replication,High,Check DRF configuration
+639,Search index corrupted,Search,Medium,Recreate search index
+640,Search index corrupted,Search,Medium,Recreate search index
+641,Change request activation failed,Workflow,Critical,Activate change request manually
+642,Mandatory field missing,Validation,High,Provide mandatory values
+643,Change request activation failed,Workflow,Medium,Activate change request manually
+644,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+645,Material master not replicated to ECC,Replication,High,Check DRF configuration
+646,Mandatory field missing,Validation,Low,Provide mandatory values
+647,Vendor replication failed,Replication,Low,Verify SOA services
+648,Customer replication failed,Replication,Critical,Restart replication service
+649,Search performance is slow,Search,Medium,Optimize HANA indexes
+650,Search returns incorrect results,Search,High,Synchronize search index
+651,Mandatory field missing,Validation,Critical,Provide mandatory values
+652,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+653,Search returns incorrect results,Search,Medium,Synchronize search index
+654,Customer validation failed,Validation,Critical,Review BRF+ rules
+655,Customer replication failed,Replication,Low,Restart replication service
+656,Search index corrupted,Search,Medium,Recreate search index
+657,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+658,Search performance is slow,Search,Critical,Optimize HANA indexes
+659,Workflow approval stuck,Workflow,Low,Restart workflow
+660,Search returns incorrect results,Search,Critical,Synchronize search index
+661,Mandatory field missing,Validation,High,Provide mandatory values
+662,Workflow timeout occurred,Workflow,Low,Review workflow logs
+663,Search returns incorrect results,Search,Medium,Synchronize search index
+664,Mandatory field missing,Validation,Critical,Provide mandatory values
+665,Workflow timeout occurred,Workflow,Low,Review workflow logs
+666,Search performance is slow,Search,Medium,Optimize HANA indexes
+667,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+668,Material type validation error,Validation,Critical,Correct validation rule
+669,Business partner search returns no results,Search,Medium,Rebuild search index
+670,Customer replication failed,Replication,Medium,Restart replication service
+671,Workflow approval stuck,Workflow,High,Restart workflow
+672,Workflow approval stuck,Workflow,Low,Restart workflow
+673,Material master not replicated to ECC,Replication,High,Check DRF configuration
+674,Workflow timeout occurred,Workflow,High,Review workflow logs
+675,Change request activation failed,Workflow,Medium,Activate change request manually
+676,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+677,Customer replication failed,Replication,Low,Restart replication service
+678,Customer replication failed,Replication,Critical,Restart replication service
+679,Change request activation failed,Workflow,High,Activate change request manually
+680,Business partner search returns no results,Search,Low,Rebuild search index
+681,Search performance is slow,Search,Critical,Optimize HANA indexes
+682,Business partner search returns no results,Search,Critical,Rebuild search index
+683,Vendor replication failed,Replication,Medium,Verify SOA services
+684,Replication queue blocked,Replication,Low,Clear outbound queue
+685,Search returns incorrect results,Search,Critical,Synchronize search index
+686,Change request activation failed,Workflow,Low,Activate change request manually
+687,Search index corrupted,Search,Medium,Recreate search index
+688,Material type validation error,Validation,Medium,Correct validation rule
+689,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+690,Vendor replication failed,Replication,Medium,Verify SOA services
+691,Customer validation failed,Validation,Medium,Review BRF+ rules
+692,Business partner search returns no results,Search,Critical,Rebuild search index
+693,Material type validation error,Validation,Critical,Correct validation rule
+694,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+695,Search index corrupted,Search,Low,Recreate search index
+696,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+697,Invalid business rule detected,Validation,Critical,Review validation logic
+698,Replication queue blocked,Replication,Medium,Clear outbound queue
+699,Customer replication failed,Replication,High,Restart replication service
+700,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+701,Business partner search returns no results,Search,High,Rebuild search index
+702,Business partner search returns no results,Search,Critical,Rebuild search index
+703,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+704,Vendor replication failed,Replication,Medium,Verify SOA services
+705,Mandatory field missing,Validation,High,Provide mandatory values
+706,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+707,Customer validation failed,Validation,Critical,Review BRF+ rules
+708,Mandatory field missing,Validation,Medium,Provide mandatory values
+709,Vendor replication failed,Replication,High,Verify SOA services
+710,Invalid business rule detected,Validation,Low,Review validation logic
+711,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+712,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+713,Invalid business rule detected,Validation,Low,Review validation logic
+714,Search performance is slow,Search,High,Optimize HANA indexes
+715,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+716,Workflow approval stuck,Workflow,Low,Restart workflow
+717,Business partner search returns no results,Search,Low,Rebuild search index
+718,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+719,Workflow approval stuck,Workflow,Low,Restart workflow
+720,Material master not replicated to ECC,Replication,High,Check DRF configuration
+721,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+722,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+723,Duplicate supplier record created,Data Quality,High,Run duplicate check process
+724,Customer replication failed,Replication,Low,Restart replication service
+725,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+726,Business partner search returns no results,Search,Low,Rebuild search index
+727,Customer validation failed,Validation,Medium,Review BRF+ rules
+728,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+729,Invalid business rule detected,Validation,Critical,Review validation logic
+730,Mandatory field missing,Validation,Medium,Provide mandatory values
+731,Business partner search returns no results,Search,High,Rebuild search index
+732,Material type validation error,Validation,Medium,Correct validation rule
+733,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+734,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+735,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+736,Workflow approval stuck,Workflow,High,Restart workflow
+737,Approval agent not assigned,Workflow,High,Update workflow configuration
+738,Business partner search returns no results,Search,Medium,Rebuild search index
+739,Workflow approval stuck,Workflow,High,Restart workflow
+740,Mandatory field missing,Validation,High,Provide mandatory values
+741,Vendor replication failed,Replication,Medium,Verify SOA services
+742,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+743,Search index corrupted,Search,Medium,Recreate search index
+744,Vendor replication failed,Replication,Medium,Verify SOA services
+745,Search returns incorrect results,Search,Low,Synchronize search index
+746,Replication queue blocked,Replication,High,Clear outbound queue
+747,Workflow approval stuck,Workflow,Critical,Restart workflow
+748,Business partner search returns no results,Search,Low,Rebuild search index
+749,Workflow timeout occurred,Workflow,High,Review workflow logs
+750,Customer validation failed,Validation,Low,Review BRF+ rules
+751,Duplicate customer detected,Data Quality,Critical,Merge duplicate customer records
+752,Search performance is slow,Search,Medium,Optimize HANA indexes
+753,Change request activation failed,Workflow,High,Activate change request manually
+754,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+755,Search index corrupted,Search,High,Recreate search index
+756,Customer validation failed,Validation,Critical,Review BRF+ rules
+757,Duplicate customer detected,Data Quality,Low,Merge duplicate customer records
+758,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+759,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+760,Customer validation failed,Validation,Medium,Review BRF+ rules
+761,Search index corrupted,Search,Medium,Recreate search index
+762,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+763,Workflow timeout occurred,Workflow,High,Review workflow logs
+764,Workflow approval stuck,Workflow,Low,Restart workflow
+765,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+766,Customer validation failed,Validation,Medium,Review BRF+ rules
+767,Customer validation failed,Validation,Medium,Review BRF+ rules
+768,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+769,Customer validation failed,Validation,Low,Review BRF+ rules
+770,Workflow approval stuck,Workflow,Medium,Restart workflow
+771,Mandatory field missing,Validation,High,Provide mandatory values
+772,Material master not replicated to ECC,Replication,High,Check DRF configuration
+773,Search returns incorrect results,Search,Low,Synchronize search index
+774,Search performance is slow,Search,Low,Optimize HANA indexes
+775,Material master not replicated to ECC,Replication,High,Check DRF configuration
+776,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+777,Workflow timeout occurred,Workflow,High,Review workflow logs
+778,Duplicate supplier record created,Data Quality,Low,Run duplicate check process
+779,Business partner search returns no results,Search,Critical,Rebuild search index
+780,Change request activation failed,Workflow,High,Activate change request manually
+781,Business partner search returns no results,Search,Low,Rebuild search index
+782,Workflow timeout occurred,Workflow,Low,Review workflow logs
+783,Vendor replication failed,Replication,Medium,Verify SOA services
+784,Search index corrupted,Search,High,Recreate search index
+785,Customer validation failed,Validation,High,Review BRF+ rules
+786,Vendor replication failed,Replication,Low,Verify SOA services
+787,Change request activation failed,Workflow,High,Activate change request manually
+788,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+789,Customer replication failed,Replication,Critical,Restart replication service
+790,Duplicate supplier record created,Data Quality,Critical,Run duplicate check process
+791,Search performance is slow,Search,Low,Optimize HANA indexes
+792,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+793,Change request activation failed,Workflow,Critical,Activate change request manually
+794,Mandatory field missing,Validation,High,Provide mandatory values
+795,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+796,Business partner search returns no results,Search,Low,Rebuild search index
+797,Mandatory field missing,Validation,Medium,Provide mandatory values
+798,Material type validation error,Validation,Low,Correct validation rule
+799,Customer replication failed,Replication,Medium,Restart replication service
+800,Search returns incorrect results,Search,High,Synchronize search index
+801,Change request activation failed,Workflow,High,Activate change request manually
+802,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+803,Material type validation error,Validation,High,Correct validation rule
+804,Mandatory field missing,Validation,Medium,Provide mandatory values
+805,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+806,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+807,Invalid business rule detected,Validation,High,Review validation logic
+808,Search performance is slow,Search,Critical,Optimize HANA indexes
+809,Mandatory field missing,Validation,Critical,Provide mandatory values
+810,Mandatory field missing,Validation,Low,Provide mandatory values
+811,Customer replication failed,Replication,Low,Restart replication service
+812,Business partner search returns no results,Search,High,Rebuild search index
+813,Workflow approval stuck,Workflow,Critical,Restart workflow
+814,Customer replication failed,Replication,Low,Restart replication service
+815,Material master not replicated to ECC,Replication,Critical,Check DRF configuration
+816,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+817,Search returns incorrect results,Search,Medium,Synchronize search index
+818,Invalid business rule detected,Validation,Critical,Review validation logic
+819,Search performance is slow,Search,High,Optimize HANA indexes
+820,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+821,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+822,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+823,Change request activation failed,Workflow,Medium,Activate change request manually
+824,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+825,Search returns incorrect results,Search,Critical,Synchronize search index
+826,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+827,Duplicate customer detected,Data Quality,High,Merge duplicate customer records
+828,Change request activation failed,Workflow,Critical,Activate change request manually
+829,Customer replication failed,Replication,Low,Restart replication service
+830,Search performance is slow,Search,Low,Optimize HANA indexes
+831,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+832,Duplicate supplier record created,Data Quality,High,Run duplicate check process
+833,Search index corrupted,Search,Critical,Recreate search index
+834,Replication queue blocked,Replication,Low,Clear outbound queue
+835,Search index corrupted,Search,Critical,Recreate search index
+836,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+837,Mandatory field missing,Validation,Low,Provide mandatory values
+838,Search returns incorrect results,Search,High,Synchronize search index
+839,Search returns incorrect results,Search,Critical,Synchronize search index
+840,Replication queue blocked,Replication,High,Clear outbound queue
+841,Search returns incorrect results,Search,Critical,Synchronize search index
+842,Duplicate customer detected,Data Quality,Critical,Merge duplicate customer records
+843,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+844,Customer replication failed,Replication,Critical,Restart replication service
+845,Duplicate customer detected,Data Quality,Medium,Merge duplicate customer records
+846,Customer validation failed,Validation,Medium,Review BRF+ rules
+847,Business partner search returns no results,Search,Critical,Rebuild search index
+848,Incomplete business partner data,Data Quality,Medium,Update mandatory attributes
+849,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+850,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+851,Duplicate customer detected,Data Quality,Critical,Merge duplicate customer records
+852,Search index corrupted,Search,Medium,Recreate search index
+853,Business partner search returns no results,Search,High,Rebuild search index
+854,Business partner search returns no results,Search,Low,Rebuild search index
+855,Invalid business rule detected,Validation,Critical,Review validation logic
+856,Material type validation error,Validation,High,Correct validation rule
+857,Customer validation failed,Validation,Critical,Review BRF+ rules
+858,Search performance is slow,Search,Medium,Optimize HANA indexes
+859,Search returns incorrect results,Search,Low,Synchronize search index
+860,Search returns incorrect results,Search,High,Synchronize search index
+861,Search returns incorrect results,Search,Medium,Synchronize search index
+862,Workflow approval stuck,Workflow,High,Restart workflow
+863,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+864,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+865,Workflow approval stuck,Workflow,Critical,Restart workflow
+866,Mandatory field missing,Validation,Critical,Provide mandatory values
+867,Business partner search returns no results,Search,High,Rebuild search index
+868,Replication queue blocked,Replication,Medium,Clear outbound queue
+869,Change request activation failed,Workflow,Low,Activate change request manually
+870,Search returns incorrect results,Search,High,Synchronize search index
+871,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+872,Material master not replicated to ECC,Replication,High,Check DRF configuration
+873,Search returns incorrect results,Search,Critical,Synchronize search index
+874,Search returns incorrect results,Search,Medium,Synchronize search index
+875,Business partner duplicate record found,Data Quality,Medium,Merge duplicate business partners
+876,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+877,Search index corrupted,Search,Critical,Recreate search index
+878,Search performance is slow,Search,Low,Optimize HANA indexes
+879,Search returns incorrect results,Search,Low,Synchronize search index
+880,Search index corrupted,Search,Low,Recreate search index
+881,Mandatory field missing,Validation,Critical,Provide mandatory values
+882,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+883,Change request activation failed,Workflow,Critical,Activate change request manually
+884,Vendor replication failed,Replication,Medium,Verify SOA services
+885,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+886,Customer replication failed,Replication,Medium,Restart replication service
+887,Vendor replication failed,Replication,Critical,Verify SOA services
+888,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+889,Workflow timeout occurred,Workflow,High,Review workflow logs
+890,Customer replication failed,Replication,Medium,Restart replication service
+891,Customer validation failed,Validation,Low,Review BRF+ rules
+892,Approval agent not assigned,Workflow,Medium,Update workflow configuration
+893,Mandatory field missing,Validation,Medium,Provide mandatory values
+894,Workflow approval stuck,Workflow,Critical,Restart workflow
+895,Change request activation failed,Workflow,High,Activate change request manually
+896,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+897,Search index corrupted,Search,Low,Recreate search index
+898,Customer replication failed,Replication,High,Restart replication service
+899,Incomplete business partner data,Data Quality,High,Update mandatory attributes
+900,Mandatory field missing,Validation,Medium,Provide mandatory values
+901,Business partner search returns no results,Search,High,Rebuild search index
+902,Business partner search returns no results,Search,Low,Rebuild search index
+903,Search index corrupted,Search,Low,Recreate search index
+904,Search performance is slow,Search,Medium,Optimize HANA indexes
+905,Invalid business rule detected,Validation,Low,Review validation logic
+906,Workflow approval stuck,Workflow,Medium,Restart workflow
+907,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+908,Search index corrupted,Search,Low,Recreate search index
+909,Material type validation error,Validation,Critical,Correct validation rule
+910,Change request activation failed,Workflow,Low,Activate change request manually
+911,Mandatory field missing,Validation,Low,Provide mandatory values
+912,Customer validation failed,Validation,Critical,Review BRF+ rules
+913,Change request activation failed,Workflow,Medium,Activate change request manually
+914,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+915,Material type validation error,Validation,High,Correct validation rule
+916,Business partner search returns no results,Search,Medium,Rebuild search index
+917,Material master not replicated to ECC,Replication,High,Check DRF configuration
+918,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+919,Search index corrupted,Search,Low,Recreate search index
+920,Customer replication failed,Replication,Low,Restart replication service
+921,Search returns incorrect results,Search,Critical,Synchronize search index
+922,Invalid business rule detected,Validation,High,Review validation logic
+923,Replication queue blocked,Replication,Medium,Clear outbound queue
+924,Customer validation failed,Validation,High,Review BRF+ rules
+925,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+926,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+927,Material type validation error,Validation,Critical,Correct validation rule
+928,Approval agent not assigned,Workflow,Low,Update workflow configuration
+929,Change request activation failed,Workflow,High,Activate change request manually
+930,Vendor replication failed,Replication,Critical,Verify SOA services
+931,Mandatory field missing,Validation,Critical,Provide mandatory values
+932,Search returns incorrect results,Search,Low,Synchronize search index
+933,Workflow approval stuck,Workflow,Critical,Restart workflow
+934,Invalid business rule detected,Validation,Critical,Review validation logic
+935,Workflow approval stuck,Workflow,High,Restart workflow
+936,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+937,Business partner search returns no results,Search,Critical,Rebuild search index
+938,Vendor replication failed,Replication,Critical,Verify SOA services
+939,Search returns incorrect results,Search,Low,Synchronize search index
+940,Workflow approval stuck,Workflow,High,Restart workflow
+941,Material type validation error,Validation,Critical,Correct validation rule
+942,Vendor replication failed,Replication,Medium,Verify SOA services
+943,Business partner duplicate record found,Data Quality,Critical,Merge duplicate business partners
+944,Approval agent not assigned,Workflow,Medium,Update workflow configuration
+945,Duplicate supplier record created,Data Quality,Medium,Run duplicate check process
+946,Customer replication failed,Replication,Critical,Restart replication service
+947,Invalid business rule detected,Validation,High,Review validation logic
+948,Duplicate supplier record created,Data Quality,High,Run duplicate check process
+949,Search returns incorrect results,Search,Medium,Synchronize search index
+950,Search performance is slow,Search,Low,Optimize HANA indexes
+951,Customer replication failed,Replication,High,Restart replication service
+952,Business partner search returns no results,Search,Critical,Rebuild search index
+953,Material master not replicated to ECC,Replication,Low,Check DRF configuration
+954,Customer replication failed,Replication,Low,Restart replication service
+955,Workflow timeout occurred,Workflow,Medium,Review workflow logs
+956,Search returns incorrect results,Search,Critical,Synchronize search index
+957,Customer validation failed,Validation,Medium,Review BRF+ rules
+958,Approval agent not assigned,Workflow,High,Update workflow configuration
+959,Customer replication failed,Replication,Medium,Restart replication service
+960,Material type validation error,Validation,Medium,Correct validation rule
+961,Duplicate supplier record created,Data Quality,Critical,Run duplicate check process
+962,Vendor replication failed,Replication,High,Verify SOA services
+963,Material master not replicated to ECC,Replication,Medium,Check DRF configuration
+964,Customer validation failed,Validation,Medium,Review BRF+ rules
+965,Search index corrupted,Search,High,Recreate search index
+966,Duplicate customer detected,Data Quality,Critical,Merge duplicate customer records
+967,Search performance is slow,Search,Medium,Optimize HANA indexes
+968,Workflow approval stuck,Workflow,Medium,Restart workflow
+969,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+970,Workflow approval stuck,Workflow,Medium,Restart workflow
+971,Customer replication failed,Replication,Low,Restart replication service
+972,Workflow approval stuck,Workflow,High,Restart workflow
+973,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+974,Invalid business rule detected,Validation,Low,Review validation logic
+975,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+976,Business partner duplicate record found,Data Quality,Low,Merge duplicate business partners
+977,Vendor replication failed,Replication,Medium,Verify SOA services
+978,Customer validation failed,Validation,Medium,Review BRF+ rules
+979,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+980,Replication queue blocked,Replication,Critical,Clear outbound queue
+981,Incomplete business partner data,Data Quality,Low,Update mandatory attributes
+982,Workflow timeout occurred,Workflow,High,Review workflow logs
+983,Search returns incorrect results,Search,Critical,Synchronize search index
+984,Search index corrupted,Search,Medium,Recreate search index
+985,Search performance is slow,Search,High,Optimize HANA indexes
+986,Replication queue blocked,Replication,High,Clear outbound queue
+987,Search performance is slow,Search,Medium,Optimize HANA indexes
+988,Customer replication failed,Replication,Critical,Restart replication service
+989,Workflow approval stuck,Workflow,Critical,Restart workflow
+990,Approval agent not assigned,Workflow,Critical,Update workflow configuration
+991,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+992,Incomplete business partner data,Data Quality,Critical,Update mandatory attributes
+993,Invalid business rule detected,Validation,Critical,Review validation logic
+994,Mandatory field missing,Validation,High,Provide mandatory values
+995,Workflow timeout occurred,Workflow,Critical,Review workflow logs
+996,Search index corrupted,Search,Low,Recreate search index
+997,Duplicate supplier record created,Data Quality,High,Run duplicate check process
+998,Search index corrupted,Search,Critical,Recreate search index
+999,Change request activation failed,Workflow,Medium,Activate change request manually
+1000,Customer validation failed,Validation,Critical,Review BRF+ rules

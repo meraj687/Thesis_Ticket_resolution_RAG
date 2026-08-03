@@ -1,0 +1,12 @@
+complexity:
+  Low:
+    estimated_resolution_time: 2 Hours
+
+  Medium:
+    estimated_resolution_time: 8 Hours
+
+  High:
+    estimated_resolution_time: 24 Hours
+
+  Critical:
+    estimated_resolution_time: 48 Hours

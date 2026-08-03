@@ -1,0 +1,11 @@
+ticket_id,description,category,priority,resolution
+1,Business partner duplicate record found,Data Quality,High,Merge duplicate business partners
+2,Material master not replicated to ECC,Replication,High,Verify DRF configuration
+3,Workflow approval stuck in pending status,Workflow,Medium,Restart workflow service
+4,Customer master validation failed,Validation,High,Review BRF+ validation rules
+5,Business partner search returns no results,Search,Low,Rebuild HANA search index
+6,Duplicate supplier record created,Data Quality,High,Run duplicate check process
+7,Vendor replication failed,Replication,High,Check SOA services
+8,Change request activation failed,Workflow,Medium,Activate CR manually
+9,Material type validation error,Validation,Medium,Correct validation rule
+10,Search performance is slow,Search,Low,Optimize search indexes

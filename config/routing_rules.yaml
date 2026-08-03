@@ -1,0 +1,12 @@
+routing:
+  High:
+    escalation: L2
+
+  Critical:
+    escalation: L3
+
+  Medium:
+    escalation: L1
+
+  Low:
+    escalation: L1

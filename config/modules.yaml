@@ -1,0 +1,15 @@
+modules:
+  MDG-BP:
+    description: Business Partner Governance
+
+  MDG-MM:
+    description: Material Master Governance
+
+  MDG-S:
+    description: Supplier Master Governance
+
+  MDG-C:
+    description: Customer Master Governance
+
+  MDG-F:
+    description: Financial Master Data Governance

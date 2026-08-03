@@ -1,0 +1,12 @@
+priorities:
+  Low:
+    sla: 72
+
+  Medium:
+    sla: 24
+
+  High:
+    sla: 8
+
+  Critical:
+    sla: 4

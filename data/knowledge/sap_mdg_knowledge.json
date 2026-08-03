@@ -1,0 +1,2402 @@
+[
+    {
+        "id": 1,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Restart DRF replication.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 2,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Check SM59 connection.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Retry synchronization.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 3,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Check SM59 connection.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Correct RFC destination.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Sales",
+        "affected_system": "SAP ECC",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 4,
+        "module": "MDG-S",
+        "business_object": "Vendor",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Vendor master data not replicated to ECC.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Review SLG1 application logs.",
+            "Check SM59 connection.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Restart DRF replication.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Master Data Integration",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "Medium",
+        "business_process": "Procurement",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Vendor synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Vendor",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 5,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Review SLG1 application logs.",
+            "Review SMQ1 queue.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Retry synchronization.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 6,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Material master synchronization failed.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Correct RFC destination.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "High",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 7,
+        "module": "MDG-S",
+        "business_object": "Vendor",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Vendor replication queue blocked.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Review SMQ1 queue.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Correct RFC destination.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Master Data Integration",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "Medium",
+        "business_process": "Procurement",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Vendor synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Vendor",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 8,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Business Partner replication failed.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Check SM59 connection.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "High",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP ECC",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 9,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Low",
+        "issue": "Customer replication failed.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Review SLG1 application logs.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Clear outbound queue.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Low",
+        "business_process": "Sales",
+        "affected_system": "SAP ECC",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "2 Hours",
+        "sla": "2 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 10,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer replication failed.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Retry synchronization.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP ECC",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 11,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SMQ1 queue.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 12,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP ECC",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 13,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Business Partner replication failed.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Correct RFC destination.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "High",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP ECC",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 14,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Business Partner replication failed.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Review SLG1 application logs.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 15,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Business Partner replication failed.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check SM59 connection.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Retry synchronization.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP ECC",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 16,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Check SM59 connection.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Restart DRF replication.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 17,
+        "module": "MDG-S",
+        "business_object": "Vendor",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Vendor replication failed after DRF execution.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check SM59 connection.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Retry synchronization.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Master Data Integration",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "Medium",
+        "business_process": "Procurement",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Vendor synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Vendor",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 18,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Critical",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SMQ1 queue.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Critical",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "48 Hours",
+        "sla": "48 Hours",
+        "escalation_level": "L3",
+        "change_required": true,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 19,
+        "module": "MDG-S",
+        "business_object": "Vendor",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Vendor replication failed after DRF execution.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Correct RFC destination.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Master Data Integration",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "Medium",
+        "business_process": "Procurement",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Vendor synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Vendor",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 20,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Material master synchronization failed.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Retry synchronization.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "Medium",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 21,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "Critical",
+        "issue": "Material master synchronization failed.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Restart DRF replication.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "Critical",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "48 Hours",
+        "sla": "48 Hours",
+        "escalation_level": "L3",
+        "change_required": true,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 22,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Material replication failed.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SLG1 application logs.",
+            "Review SMQ1 queue.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Restart DRF replication.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "Medium",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 23,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Material master synchronization failed.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Review SLG1 application logs.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Correct RFC destination.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "Medium",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 24,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Material replication failed.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check DRFOUT configuration.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Clear outbound queue.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "High",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 25,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Material replication stopped unexpectedly.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Restart DRF replication.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "Medium",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP ECC",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 26,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Review SLG1 application logs.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Restart DRF replication.",
+            "Correct RFC destination.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 27,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Critical",
+        "issue": "Customer replication failed.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Check SM59 connection.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Critical",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "48 Hours",
+        "sla": "48 Hours",
+        "escalation_level": "L3",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 28,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check SM59 connection.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Correct RFC destination.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Sales",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 29,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Review SLG1 application logs.",
+            "Review SMQ1 queue.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Retry synchronization.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "High",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 30,
+        "module": "MDG-S",
+        "business_object": "Vendor",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Vendor synchronization failed due to RFC timeout.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Restart DRF replication.",
+            "Retry synchronization.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Master Data Integration",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "High",
+        "business_process": "Procurement",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Vendor synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Vendor",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 31,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Customer replication failed.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Review SMQ1 queue.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Restart DRF replication.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 32,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check SM59 connection.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Retry synchronization.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 33,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "Low",
+        "issue": "Material replication stopped unexpectedly.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check DRFOUT configuration.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "Low",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP ECC",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "2 Hours",
+        "sla": "2 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 34,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Review SMQ1 queue.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Correct RFC destination.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 35,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Critical",
+        "issue": "Customer replication failed.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Clear outbound queue.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Critical",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "48 Hours",
+        "sla": "48 Hours",
+        "escalation_level": "L3",
+        "change_required": true,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 36,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Material replication stopped unexpectedly.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Restart DRF replication.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "Medium",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 37,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Check SM59 connection.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Restart DRF replication.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 38,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Review SLG1 application logs.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Restart DRF replication.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "High",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 39,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Critical",
+        "issue": "Customer replication failed.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check SM59 connection.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Critical",
+        "business_process": "Sales",
+        "affected_system": "SAP ECC",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "48 Hours",
+        "sla": "48 Hours",
+        "escalation_level": "L3",
+        "change_required": true,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 40,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Low",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Correct RFC destination.",
+            "Restart DRF replication.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Low",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "2 Hours",
+        "sla": "2 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 41,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Material replication stopped unexpectedly.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Restart DRF replication.",
+            "Retry synchronization."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "High",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 42,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Critical",
+        "issue": "Business Partner replication failed.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Restart DRF replication.",
+            "Retry synchronization.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Critical",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "48 Hours",
+        "sla": "48 Hours",
+        "escalation_level": "L3",
+        "change_required": true,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 43,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Review SMQ1 queue.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Clear outbound queue.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "High",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 44,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer synchronization unsuccessful.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Review SLG1 application logs.",
+            "Check SM59 connection.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Retry synchronization.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 45,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Material replication failed.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Review SLG1 application logs.",
+            "Check DRFOUT configuration.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Retry synchronization.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "High",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 46,
+        "module": "MDG-S",
+        "business_object": "Vendor",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Vendor replication failed after DRF execution.",
+        "possible_root_causes": [
+            "SOA service unavailable.",
+            "Outbound queue blocked."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Review SMQ1 queue.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Restart DRF replication.",
+            "Retry synchronization.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Master Data Integration",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "High",
+        "business_process": "Procurement",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Vendor synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Vendor",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 47,
+        "module": "MDG-MM",
+        "business_object": "Material",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Material replication stopped unexpectedly.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Retry synchronization.",
+            "Restart DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Material Master Team",
+        "support_team": "Material Master Support",
+        "resolver_role": "SAP Material Master Consultant",
+        "complexity": "Medium",
+        "business_process": "Manufacturing",
+        "affected_system": "SAP ECC",
+        "business_impact": "Material synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "Material",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 48,
+        "module": "MDG-BP",
+        "business_object": "Business Partner",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Business Partner synchronization timeout.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SLG1 application logs.",
+            "Check SM59 connection.",
+            "Review SMQ1 queue."
+        ],
+        "recommended_resolution": [
+            "Clear outbound queue.",
+            "Restart DRF replication.",
+            "Correct RFC destination."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Functional Team",
+        "support_team": "Business Partner Support",
+        "resolver_role": "SAP MDG Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Business Partner synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Business Partner",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 49,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "Customer replication failed.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs.",
+            "Check SM59 connection."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Restart DRF replication.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "High",
+        "business_process": "Sales",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": false,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    },
+    {
+        "id": 50,
+        "module": "MDG-C",
+        "business_object": "Customer",
+        "category": "Replication",
+        "priority": "Medium",
+        "issue": "Customer replication failed.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check SM59 connection.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Retry synchronization.",
+            "Restart DRF replication.",
+            "Clear outbound queue."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP Customer Master Team",
+        "support_team": "Customer Master Support",
+        "resolver_role": "SAP Functional Consultant",
+        "complexity": "Medium",
+        "business_process": "Sales",
+        "affected_system": "SAP S/4HANA",
+        "business_impact": "Customer synchronization interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": true,
+        "keywords": [
+            "Customer",
+            "Replication",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "SAP Note Placeholder"
+        ]
+    }
+]
