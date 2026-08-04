@@ -1,10 +1,16 @@
 """
 Recommendation Service
 
-Orchestrates the complete AI pipeline.
+Handles:
+1. Semantic Retrieval
+2. Prompt Generation
+3. LLM Recommendation
+4. Fallback Logic
+5. Confidence Calculation
 """
 
 import json
+import time
 
 from app.retriever.retriever import SemanticRetriever
 from app.llm.prompt_builder import PromptBuilder
@@ -20,10 +26,11 @@ class RecommendationService:
         self.llm = OllamaClient()
 
     def analyze_ticket(self, ticket: str):
+        start_time = time.time()
 
-        # --------------------------------------------------
-        # Retrieve Similar Incidents
-        # --------------------------------------------------
+        # =====================================================
+        # STEP 1 : Retrieve Similar Incidents
+        # =====================================================
 
         results = self.retriever.search(
             ticket,
@@ -35,18 +42,18 @@ class RecommendationService:
             for item in results
         ]
 
-        # --------------------------------------------------
-        # Build Prompt
-        # --------------------------------------------------
+        # =====================================================
+        # STEP 2 : Build Prompt
+        # =====================================================
 
         prompt = PromptBuilder.build(
             ticket,
             records
         )
 
-        # --------------------------------------------------
-        # Generate AI Recommendation
-        # --------------------------------------------------
+        # =====================================================
+        # STEP 3 : Generate AI Recommendation
+        # =====================================================
 
         answer = self.llm.generate(prompt)
 
@@ -58,16 +65,19 @@ class RecommendationService:
 
             recommendation = {}
 
-        # --------------------------------------------------
-        # Fallback using Best Retrieved Record
-        # --------------------------------------------------
+        # =====================================================
+        # STEP 4 : Fallback using Best Retrieved Record
+        # =====================================================
 
         best_record = records[0]
 
-        recommendation.setdefault(
-            "issue_summary",
-            best_record.issue
-        )
+        # Issue Summary
+
+        if not recommendation.get("issue_summary"):
+
+            recommendation["issue_summary"] = best_record.issue
+
+        # Root Cause
 
         if not recommendation.get("root_cause"):
 
@@ -75,11 +85,15 @@ class RecommendationService:
                 best_record.possible_root_causes
             )
 
+        # Diagnostic Steps
+
         if not recommendation.get("diagnostic_steps"):
 
             recommendation["diagnostic_steps"] = (
                 best_record.diagnostic_steps
             )
+
+        # Recommended Resolution
 
         if not recommendation.get("recommended_resolution"):
 
@@ -87,11 +101,15 @@ class RecommendationService:
                 best_record.recommended_resolution
             )
 
+        # Department
+
         if not recommendation.get("responsible_department"):
 
             recommendation["responsible_department"] = (
                 best_record.responsible_department
             )
+
+        # Resolver
 
         if not recommendation.get("resolver_role"):
 
@@ -99,15 +117,17 @@ class RecommendationService:
                 best_record.resolver_role
             )
 
+        # Business Impact
+
         if not recommendation.get("business_impact"):
 
             recommendation["business_impact"] = (
                 best_record.business_impact
             )
 
-        # --------------------------------------------------
-        # Convert Strings into Lists
-        # --------------------------------------------------
+        # =====================================================
+        # STEP 5 : Convert Strings to Lists
+        # =====================================================
 
         if isinstance(
             recommendation["root_cause"],
@@ -116,30 +136,13 @@ class RecommendationService:
 
             recommendation["root_cause"] = [
 
-                x.strip()
+                item.strip()
 
-                for x in recommendation[
+                for item in recommendation[
                     "root_cause"
                 ].split(",")
 
-                if x.strip()
-
-            ]
-
-        if isinstance(
-            recommendation["recommended_resolution"],
-            str
-        ):
-
-            recommendation["recommended_resolution"] = [
-
-                x.strip()
-
-                for x in recommendation[
-                    "recommended_resolution"
-                ].split(",")
-
-                if x.strip()
+                if item.strip()
 
             ]
 
@@ -150,25 +153,41 @@ class RecommendationService:
 
             recommendation["diagnostic_steps"] = [
 
-                x.strip()
+                item.strip()
 
-                for x in recommendation[
+                for item in recommendation[
                     "diagnostic_steps"
                 ].split(",")
 
-                if x.strip()
+                if item.strip()
 
             ]
 
-        # --------------------------------------------------
-        # Confidence Calculation
-        # --------------------------------------------------
+        if isinstance(
+            recommendation["recommended_resolution"],
+            str
+        ):
 
-        best_distance = results[0]["distance"]
+            recommendation["recommended_resolution"] = [
 
-        confidence = round(
-            (1 - best_distance) * 100
-        )
+                item.strip()
+
+                for item in recommendation[
+                    "recommended_resolution"
+                ].split(",")
+
+                if item.strip()
+
+            ]
+
+        # =====================================================
+        # STEP 6 : Confidence Calculation
+        # (Cosine Similarity)
+        # =====================================================
+
+        similarity = results[0]["similarity"]
+
+        confidence = round(similarity * 100)
 
         confidence = max(
             0,
@@ -178,11 +197,27 @@ class RecommendationService:
             )
         )
 
-        recommendation["confidence"] = f"{confidence}%"
+        recommendation["confidence"] = confidence
 
-        # --------------------------------------------------
-        # Similar Incidents
-        # --------------------------------------------------
+        if confidence >= 95:
+
+            recommendation["confidence_level"] = "Very High"
+
+        elif confidence >= 85:
+
+            recommendation["confidence_level"] = "High"
+
+        elif confidence >= 70:
+
+            recommendation["confidence_level"] = "Medium"
+
+        else:
+
+            recommendation["confidence_level"] = "Low"
+
+        # =====================================================
+        # STEP 7 : Similar Incidents
+        # =====================================================
 
         similar_incidents = []
 
@@ -193,6 +228,7 @@ class RecommendationService:
             record = item["record"]
 
             if record.issue in seen:
+
                 continue
 
             seen.add(record.issue)
@@ -211,25 +247,40 @@ class RecommendationService:
 
                 "resolver_role": record.resolver_role,
 
-                "distance": round(
-                    item["distance"],
-                    4
+                "similarity": round(
+                    item["similarity"] * 100,
+                    2
                 )
 
             })
 
-        # --------------------------------------------------
-        # Final Response
-        # --------------------------------------------------
+        # =====================================================
+        # STEP 8 : Final Response
+        # =====================================================
+
+        reasoning = f"""
+The submitted SAP ticket was converted into embeddings.
+
+The FAISS vector database retrieved {len(records)} similar incidents.
+
+The recommendation was generated using the retrieved SAP MDG knowledge base.
+
+Confidence is based on semantic similarity between the submitted ticket and retrieved incidents.
+"""
+
+        recommendation["reasoning"] = reasoning
+
+        response_time = round(time.time() - start_time,2)
 
         return {
 
             "ticket": ticket,
+            "response_time": response_time,
 
             "retrieved_records": len(records),
 
-            "similar_incidents": similar_incidents,
+            "recommendation": recommendation,
 
-            "recommendation": recommendation
+            "similar_incidents": similar_incidents
 
         }

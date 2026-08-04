@@ -1,8 +1,10 @@
 """
 FAISS Vector Index
+Using Cosine Similarity (Inner Product)
 """
 
 from pathlib import Path
+
 import faiss
 import numpy as np
 
@@ -19,43 +21,39 @@ class FaissIndex:
 
         dimension = embeddings.shape[1]
 
-        self.index = faiss.IndexFlatL2(dimension)
-
-        self.index.add(
-            np.asarray(
-                embeddings,
-                dtype=np.float32
-            )
+        # Normalize embeddings
+        embeddings = np.asarray(
+            embeddings,
+            dtype=np.float32
         )
+
+        faiss.normalize_L2(embeddings)
+
+        # Inner Product = Cosine Similarity
+        self.index = faiss.IndexFlatIP(dimension)
+
+        self.index.add(embeddings)
 
         return self.index
 
     def save(self):
 
         self.INDEX_PATH.parent.mkdir(
-
             parents=True,
-
             exist_ok=True
-
         )
 
         faiss.write_index(
-
             self.index,
-
             str(self.INDEX_PATH)
-
         )
 
-        print("FAISS index saved.")
+        print("FAISS index saved successfully.")
 
     def load(self):
 
         self.index = faiss.read_index(
-
             str(self.INDEX_PATH)
-
         )
 
         return self.index
