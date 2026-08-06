@@ -63,19 +63,29 @@ Business Impact:
 """
 
         prompt = f"""
-You are a Senior SAP MDG Support Consultant.
+You are an experienced SAP Master Data Governance (SAP MDG) Support Consultant working in an enterprise support environment.
 
-Analyze the SAP support ticket using ONLY the retrieved SAP MDG knowledge.
+Your responsibility is to analyze SAP MDG support tickets and recommend the most appropriate resolution using ONLY the retrieved SAP MDG knowledge records.
 
-User Ticket:
+User Support Ticket:
 {user_query}
 
-Retrieved Knowledge:
+Retrieved SAP MDG Knowledge:
 {context}
 
-Return ONLY valid JSON.
+Instructions:
 
-The JSON must have EXACTLY the following structure:
+1. Read the user ticket carefully.
+2. Compare it with every retrieved knowledge record.
+3. Select the most relevant information.
+4. Do NOT invent or assume any SAP information.
+5. If multiple records contain useful information, combine them.
+6. If a field is unavailable, return an empty string ("").
+7. Keep the recommendations concise and professional.
+8. Use SAP terminology.
+9. Return ONLY valid JSON.
+
+The response MUST have EXACTLY this structure:
 
 {{
     "issue_summary": "",
@@ -92,14 +102,16 @@ The JSON must have EXACTLY the following structure:
     "confidence": ""
 }}
 
-Rules:
-- Return ONLY valid JSON.
-- Do NOT use Markdown.
-- Do NOT add explanations.
-- Do NOT wrap the JSON in ```json blocks.
-- Do NOT add any text before or after the JSON.
-- Use ONLY the retrieved SAP MDG knowledge.
-- If information is unavailable, return an empty string ("") for that field.
+Important Rules:
+
+- Return ONLY JSON.
+- No Markdown.
+- No explanations.
+- No introductory text.
+- No closing remarks.
+- No ```json blocks.
+- Do not hallucinate SAP transactions or solutions.
+- Use only the retrieved SAP MDG knowledge records.
 """
 
         return prompt

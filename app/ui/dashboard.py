@@ -14,24 +14,100 @@ st.set_page_config(
     layout="wide"
 )
 
-# st.title("🤖 SAP MDG Intelligent Support Assistant")
+# =====================================================
+# SIDEBAR
+# =====================================================
 
-# st.markdown(
-#     "### AI-powered SAP MDG Support Ticket Classification and Resolution Recommendation"
-# )
-st.title("🤖 SAP MDG Intelligent Support Assistant")
+with st.sidebar:
 
-st.caption(
-    "AI-powered SAP Support Ticket Classification and Resolution Recommendation using Retrieval-Augmented Generation (RAG)"
-)
+    st.title("🤖 SAP MDG AI")
 
-st.markdown(
-    """
-**Technology Stack**
+    st.markdown("---")
 
-FastAPI • FAISS • Sentence Transformers • Llama 3.2 • Streamlit
-"""
-)
+    st.subheader("System Status")
+
+    st.success("🟢 FastAPI Connected")
+    st.success("🟢 FAISS Loaded")
+    st.success("🟢 Sentence Transformer Ready")
+    st.success("🟢 Llama 3.2 Ready")
+
+    st.markdown("---")
+
+    st.subheader("Technology")
+
+    st.info("FastAPI")
+    st.info("Sentence Transformers")
+    st.info("FAISS")
+    st.info("Llama 3.2")
+    st.info("Streamlit")
+
+    st.markdown("---")
+
+    st.caption("Version 1.0")
+
+# =====================================================
+# CUSTOM CSS
+# =====================================================
+
+st.markdown("""
+<style>
+
+.block-container{
+    padding-top:1.8rem;
+    padding-bottom:2rem;
+}
+
+div[data-testid="metric-container"]{
+    border-radius:12px;
+    padding:18px;
+    border:1px solid #404040;
+    background:#1E1E1E;
+}
+
+div.stAlert{
+    border-radius:12px;
+}
+
+hr{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+<div style="
+padding:25px;
+border-radius:15px;
+background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
+color:white;
+">
+
+<h1 style="margin-bottom:0;">
+🤖 SAP MDG Intelligent Support Assistant
+</h1>
+
+<h3 style="margin-top:8px;">
+Enterprise AI Recommendation System
+</h3>
+
+<p style="font-size:18px;">
+AI-powered SAP Support Ticket Classification and Resolution Recommendation
+using <b>Retrieval-Augmented Generation (RAG)</b>.
+</p>
+
+<hr>
+
+<b>Technology Stack</b>
+
+<br>
+
+FastAPI • Sentence Transformers • FAISS • Ollama • Llama 3.2 • Streamlit
+
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
@@ -48,7 +124,7 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
         st.stop()
 
     with st.spinner(
-    "Retrieving similar SAP incidents and generating AI recommendation..."
+        "Retrieving similar SAP incidents and generating AI recommendation..."
     ):
 
         try:
@@ -71,7 +147,7 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
 
     result = response.json()
 
-    recommendation = result["recommendation"]
+    recommendation = result.get("recommendation", {})
 
     similar = result.get("similar_incidents", [])
 
@@ -79,23 +155,22 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
         st.error("No similar incidents found.")
         st.stop()
 
-    # st.success("Analysis Completed Successfully")
-    
-    st.subheader("⚙ AI Processing Workflow")
+st.subheader("⚙ AI Processing Workflow")
 
-    workflow = [
-        "Ticket Received",
-        "Embedding Generated",
-        "Semantic Search (FAISS)",
-        "Top Similar Incidents Retrieved",
-        "Llama 3.2 Analysis",
-        "Recommendation Generated"
-    ]
+workflow_steps = [
+    "📩 Ticket Received",
+    "🧠 Sentence Embedding Generated",
+    "🔎 FAISS Semantic Search",
+    "📚 Top 3 Similar Incidents Retrieved",
+    "🤖 Llama 3.2 Analysis",
+    "✅ AI Recommendation Generated"
+]
 
-    for step in workflow:
-        st.success(f"✔ {step}")
+cols = st.columns(len(workflow_steps))
 
-    st.divider()
+for col, step in zip(cols, workflow_steps):
+    with col:
+        st.success(step)
 
     st.divider()
 
@@ -105,39 +180,43 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
 
     first = similar[0]
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4 , col5 , col6 = st.columns(6)
 
     with col1:
-        st.info(f"**Business Object**\n\n{first['business_object']}")
+        st.metric(
+    "Business Object",
+    first["business_object"]
+)
 
     with col2:
-        st.info(f"**Module**\n\n{first['module']}")
+        st.metric(
+    "Module",
+    first["module"]
+)
 
     with col3:
-        st.info(f"**Category**\n\n{first['category']}")
+        st.metric(
+    "Category",
+    first["category"]
+)
 
     with col4:
-        st.info(f"**Department**\n\n{first['department']}")
+        st.metric(
+    "Department",
+    first["department"]
+)
 
-    # col1.metric(
-    #     "Business Object",
-    #     first["business_object"]
-    # )
+    with col5:
+        st.metric(
+    "Resolver",
+    first["resolver_role"]
+)
 
-    # col2.metric(
-    #     "Category",
-    #     first["category"]
-    # )
-
-    # col3.metric(
-    #     "Department",
-    #     first["department"]
-    # )
-
-    # col4.metric(
-    #     "Resolver",
-    #     first["resolver_role"]
-    # )
+    with col6:
+        st.metric(
+    "Records",
+    result['retrieved_records']
+)
 
     st.divider()
 
@@ -168,43 +247,11 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
         if isinstance(root_causes, list):
 
             for cause in root_causes:
-
-                # st.write("•", cause)
                 st.warning(cause)
 
         else:
-
             st.write(root_causes)
 
-        st.subheader("🏢 Responsible Department")
-
-        st.success(
-            recommendation.get(
-                "responsible_department",
-                ""
-            )
-        )
-
-        st.subheader("👨‍💼 Resolver Role")
-
-        st.success(
-            recommendation.get(
-                "resolver_role",
-                ""
-            )
-        )
-
-        st.subheader("💼 Business Impact")
-        st.subheader("🧠 AI Reasoning")
-
-        st.info(recommendation.get("reasoning",""))
-
-        st.error(
-            recommendation.get(
-                "business_impact",
-                ""
-            )
-        )
 
     with right:
 
@@ -217,20 +264,11 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
 
         if isinstance(steps, list):
 
-            for step in steps:
-
-                # st.checkbox(
-                #     step,
-                #     value=True,
-                #     disabled=True
-                # )
-                # st.markdown(f"✅ {step}")
-                st.info(f"Step {steps.index(step)+1}")
-
+            for i, step in enumerate(steps, start=1):
+                st.info(f"Step {i}")
                 st.success(step)
 
         else:
-
             st.write(steps)
 
         st.subheader("✅ Recommended Resolution")
@@ -242,42 +280,55 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
 
         if isinstance(resolutions, list):
 
-            # for item in resolutions:
-
-            #     st.success(item)
             for i, item in enumerate(resolutions, start=1):
-
-                st.success(f"Resolution {i}\n\n{item}"
-    )
+                st.success(f"✅ Resolution {i}")
+                st.write(item)
 
         else:
-
             st.success(resolutions)
 
-        # st.subheader("📈 Confidence Score")
+    st.divider()
 
-        # confidence = recommendation.get(
-        #     "confidence",
-        #     "0%"
-        # )
-        # confidence_level = recommendation.get("confidence_level", "Unknown")
+    # =====================================================
+    # BUSINESS INFORMATION
+    # =====================================================
 
-        # try:
+    st.subheader("🏢 Business Information")
 
-        #     value = int(
-        #         confidence.replace(
-        #             "%",
-        #             ""
-        #         )
-        #     )
+    c1, c2 = st.columns(2)
 
-        # except:
+    with c1:
+        st.markdown("### Responsible Department")
+        st.success(
+            recommendation.get(
+                "responsible_department",
+                ""
+            )
+        )
 
-        #     value = 0
+        st.markdown("### Business Impact")
+        st.error(
+            recommendation.get(
+                "business_impact",
+                ""
+            )
+        )
 
-        # st.progress(value / 100)
+    with c2:
+        st.markdown("### Resolver Role")
+        st.success(
+            recommendation.get(
+                "resolver_role",
+                ""
+            )
+        )
 
-        # st.write(f"### {confidence}")
+    reasoning = recommendation.get("reasoning")
+
+    if reasoning:
+        st.divider()
+        st.subheader("🧠 AI Reasoning")
+        st.info(reasoning)
 
     # =====================================================
     # AI Match Score
@@ -291,11 +342,8 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
         "Unknown"
     )
 
-    # Support both int and string confidence values
     if isinstance(confidence, str):
-
         confidence = confidence.replace("%", "").strip()
-
         try:
             confidence = int(confidence)
         except ValueError:
@@ -304,20 +352,10 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
     st.progress(confidence / 100)
 
     metric1, metric2 = st.columns(2)
-
     with metric1:
-
-        st.metric(
-            "Score",
-            f"{confidence}%"
-        )
-
+        st.metric("Score", f"{confidence}%")
     with metric2:
-
-        st.metric(
-            "Level",
-            confidence_level
-        )
+        st.metric("Level", confidence_level)
 
     st.divider()
 
@@ -327,37 +365,20 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
 
     st.subheader("📊 Processing Summary")
 
-    c1, c2, c3, c4, c5 = st.columns(4)
+    c1, c2, c3, c4, c5, c6 = st.columns(6)
 
     with c1:
-        st.metric(
-            "Retrieved Records",
-            result["retrieved_records"]
-        )
-
+        st.metric("Retrieved Records", result["retrieved_records"])
     with c2:
-        st.metric(
-            "Embedding Model",
-            "MiniLM-L6-v2"
-        )
-
+        st.metric("Embedding Model", "MiniLM-L6-v2")
     with c3:
-        st.metric(
-            "Vector Database",
-            "FAISS"
-        )
-
+        st.metric("Vector Database", "FAISS")
     with c4:
-        st.metric(
-            "LLM",
-            "Llama 3.2"
-        )
-
+        st.metric("LLM", "Llama 3.2")
     with c5:
-        st.metric(
-            "Response Time",
-            f"{result['response_time']} sec"
-        )
+        st.metric("Response Time", f"{result['response_time']} sec")
+    with c6:
+        st.metric("Similarity", "Cosine")
 
     st.divider()
 
@@ -368,65 +389,24 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
     st.subheader("📚 Similar SAP Incidents")
 
     for i, incident in enumerate(similar, start=1):
-
-        with st.expander(
-            f"📄 Similar SAP Incident #{i}"
-        ):
-            # Show the issue at the top
+        with st.expander(f"📄 Similar SAP Incident #{i}"):
             st.write("### Issue")
-            st.info(incident["issue"])
-
             st.info(incident["issue"])
 
             c1, c2 = st.columns(2)
 
             with c1:
-
-                st.write(
-                    "**Business Object:**",
-                    incident["business_object"]
-                )
-
-                st.write(
-                    "**Module:**",
-                    incident["module"]
-                )
-
-                st.write(
-                    "**Category:**",
-                    incident["category"]
-                )
+                st.write("**Business Object:**", incident["business_object"])
+                st.write("**Module:**", incident["module"])
+                st.write("**Category:**", incident["category"])
 
             with c2:
+                st.write("**Department:**", incident["department"])
+                st.write("**Resolver:**", incident["resolver_role"])
 
-                st.write(
-                    "**Department:**",
-                    incident["department"]
-                )
-
-                st.write(
-                    "**Resolver:**",
-                    incident["resolver_role"]
-                )
-
-                # st.write("**Distance:**")
-                # similarity = incident.get("similarity", 0)
-
-                # st.metric(
-                #     "AI Match Score",
-                #     f"{similarity:.2f}%"
-                # )
-                # st.progress(similarity / 100)
                 similarity = incident.get("similarity", 0)
-
-                st.metric(
-                    "Semantic Match",
-                    f"{similarity:.2f}%"
-                )
-
-                st.progress(
-                    similarity / 100
-                )
+                st.metric("Semantic Match", f"{similarity:.2f}%")
+                st.progress(min(max(similarity / 100, 0), 1))
 
     st.divider()
 
@@ -435,8 +415,13 @@ if st.button("🚀 Analyze Ticket", use_container_width=True):
     # =====================================================
 
     # with st.expander("🔍 View Complete JSON Response"):
-
     #     st.json(result)
+
     st.divider()
 
-    st.caption("Developed for MSc Artificial Intelligence Thesis | SAP MDG Intelligent Support Assistant")
+    st.caption(
+        "Developed by Mohammad Aryaan | "
+        "MSc Artificial Intelligence | "
+        "IU International University | "
+        "Master Thesis 2026"
+    )

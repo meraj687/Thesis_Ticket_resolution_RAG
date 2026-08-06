@@ -37,6 +37,26 @@ class RecommendationService:
             top_k=3
         )
 
+        if not results:
+            return {
+                "ticket": ticket,
+                "response_time": round(time.time() - start_time, 2),
+                "retrieved_records": 0,
+                "recommendation": {
+                    "issue_summary": "No similar SAP incidents found.",
+                    "root_cause": [],
+                    "diagnostic_steps": [],
+                    "recommended_resolution": [],
+                    "responsible_department": "",
+                    "resolver_role": "",
+                    "business_impact": "",
+                    "confidence": 0,
+                    "confidence_level": "Unknown",
+                    "reasoning": "The knowledge base did not contain any similar incidents."
+                },
+                "similar_incidents": []
+            }
+
         records = [
             item["record"]
             for item in results
@@ -199,17 +219,37 @@ class RecommendationService:
 
         recommendation["confidence"] = confidence
 
-        if confidence >= 95:
+        # if confidence >= 95:
 
-            recommendation["confidence_level"] = "Very High"
+        #     recommendation["confidence_level"] = "Very High"
 
-        elif confidence >= 85:
+        # elif confidence >= 85:
+
+        #     recommendation["confidence_level"] = "High"
+
+        # elif confidence >= 70:
+
+        #     recommendation["confidence_level"] = "Medium"
+
+        # else:
+
+        #     recommendation["confidence_level"] = "Low"
+
+        if confidence >= 90:
+
+            recommendation["confidence_level"] = "Excellent"
+
+        elif confidence >= 75:
 
             recommendation["confidence_level"] = "High"
 
-        elif confidence >= 70:
+        elif confidence >= 60:
 
-            recommendation["confidence_level"] = "Medium"
+            recommendation["confidence_level"] = "Moderate"
+
+        elif confidence >= 40:
+
+            recommendation["confidence_level"] = "Fair"
 
         else:
 
@@ -259,22 +299,38 @@ class RecommendationService:
         # =====================================================
 
         reasoning = f"""
-The submitted SAP ticket was converted into embeddings.
+The submitted SAP support ticket was converted into semantic embeddings using the Sentence Transformer model.
 
-The FAISS vector database retrieved {len(records)} similar incidents.
+FAISS searched the vector database and retrieved {len(records)} similar SAP MDG incidents.
 
-The recommendation was generated using the retrieved SAP MDG knowledge base.
+The retrieved incidents were supplied to the Llama 3.2 language model using Retrieval-Augmented Generation (RAG).
 
-Confidence is based on semantic similarity between the submitted ticket and retrieved incidents.
+The recommendation was generated only from the retrieved SAP knowledge records.
+
+The confidence score is derived from the semantic similarity between the submitted ticket and the closest matching incident.
 """
 
         recommendation["reasoning"] = reasoning
 
-        response_time = round(time.time() - start_time,2)
+        # Add these new fields here
+        recommendation["retrieval_method"] = "Semantic Search (Sentence Transformers + FAISS)"
+
+        recommendation["llm"] = "Llama 3.2"
+
+        recommendation["embedding_model"] = "all-MiniLM-L6-v2"
+
+        recommendation["retrieved_records"] = len(records)
+
+        response_time = round(time.time() - start_time, 3)
 
         return {
 
+            "version": "1.0.0",
+
+            "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+
             "ticket": ticket,
+
             "response_time": response_time,
 
             "retrieved_records": len(records),
