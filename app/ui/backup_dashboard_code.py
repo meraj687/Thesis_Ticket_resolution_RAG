@@ -449,40 +449,6 @@ if analyze:
 
         st.stop()
 
-# =====================================================
-# PREPARE ANALYTICS DATA
-# =====================================================
-
-    import pandas as pd
-
-    analytics_df = pd.DataFrame(similar)
-
-    if not analytics_df.empty:
-
-        analytics_df["similarity"] = pd.to_numeric(
-            analytics_df["similarity"],
-            errors="coerce"
-        ).fillna(0)
-
-        analytics_df["similarity"] = (
-            analytics_df["similarity"]
-            .clip(0, 100)
-        )
-
-        analytics_df["chart_label"] = [
-            f"Incident #{i}"
-            for i in range(
-                1,
-                len(analytics_df) + 1
-            )
-        ]
-
-    # =====================================================
-# PREPARE ANALYTICS DATA
-# =====================================================
-
-
-
     # =====================================================
     # GENERATE PDF REPORT
     # =====================================================
@@ -600,7 +566,7 @@ if analyze:
 
         st.write(
             "**Similarity Method:**",
-            "Hybrid Semantic Retrieval"
+            "Cosine Similarity"
         )
 
     st.divider()
@@ -782,252 +748,40 @@ if analyze:
     # KNOWLEDGE BASE ANALYTICS
     # =====================================================
 
-    # =====================================================
-    # RETRIEVAL ANALYTICS
-    # =====================================================
+    st.subheader("📊 SAP Knowledge Base Analytics")
 
-    st.subheader("📊 Retrieval & AI Performance Analytics")
+    import pandas as pd
 
-#     import pandas as pd
+    analytics_df = pd.DataFrame(similar)
 
-#     analytics_df = pd.DataFrame(similar)
+    if not analytics_df.empty:
 
-# if not analytics_df.empty:
+        metric1, metric2, metric3, metric4 = st.columns(4)
 
-#     # -------------------------------------------------
-#     # PREPARE DATA
-#     # -------------------------------------------------
+        with metric1:
+            st.metric(
+                "Retrieved Incidents",
+                len(analytics_df)
+            )
 
-#     analytics_df["similarity"] = pd.to_numeric(
-#         analytics_df["similarity"],
-#         errors="coerce"
-#     ).fillna(0)
+        with metric2:
+            st.metric(
+                "Business Objects",
+                analytics_df["business_object"].nunique()
+            )
 
-#     analytics_df["similarity"] = (
-#         analytics_df["similarity"]
-#         .clip(0, 100)
-#     )
+        with metric3:
+            st.metric(
+                "SAP Modules",
+                analytics_df["module"].nunique()
+            )
 
-#     # Short labels for chart readability
-#     analytics_df["chart_label"] = [
-#         f"Incident #{i}"
-#         for i in range(1, len(analytics_df) + 1)
-#     ]
+        with metric4:
+            st.metric(
+                "Departments",
+                analytics_df["department"].nunique()
+            )
 
-    # -------------------------------------------------
-    # SUMMARY METRICS
-    # -------------------------------------------------
-
-    metric1, metric2, metric3, metric4 = st.columns(4)
-
-    with metric1:
-
-        st.metric(
-            "Top-1 Similarity",
-            f"{analytics_df.iloc[0]['similarity']:.2f}%"
-        )
-
-    with metric2:
-
-        st.metric(
-            "Average Similarity",
-            f"{analytics_df['similarity'].mean():.2f}%"
-        )
-
-    with metric3:
-
-        st.metric(
-            "Top-3 Retrieved",
-            len(analytics_df)
-        )
-
-    with metric4:
-
-        st.metric(
-            "Response Time",
-            f"{float(result['response_time']):.2f} sec"
-        )
-
-    st.divider()
-
-    # =================================================
-    # CHART 1
-    # TOP RETRIEVED INCIDENTS
-    # =================================================
-
-    st.markdown(
-        "### 🎯 Semantic Similarity of Retrieved Incidents"
-    )
-
-    similarity_chart = analytics_df[
-        ["chart_label", "similarity"]
-    ].copy()
-
-    similarity_chart = similarity_chart.set_index(
-        "chart_label"
-    )
-
-    st.bar_chart(
-        similarity_chart,
-        y="similarity",
-        y_label="Similarity (%)",
-        x_label="Retrieved Incident",
-        use_container_width=True
-    )
-
-    st.caption(
-        "Higher similarity indicates stronger semantic alignment "
-        "between the submitted SAP MDG ticket and the retrieved incident."
-    )
-
-    st.divider()
-
-    # =================================================
-    # CHART 2
-    # RETRIEVAL RANKING
-    # =================================================
-
-    st.markdown(
-        "### 🏆 Retrieval Ranking"
-    )
-
-    ranking_df = analytics_df[
-        [
-            "chart_label",
-            "similarity",
-            "business_object",
-            "module"
-        ]
-    ].copy()
-
-    ranking_df["Rank"] = range(
-        1,
-        len(ranking_df) + 1
-    )
-
-    ranking_df = ranking_df[
-        [
-            "Rank",
-            "chart_label",
-            "similarity",
-            "business_object",
-            "module"
-        ]
-    ]
-
-    ranking_df.columns = [
-        "Rank",
-        "Incident",
-        "Similarity (%)",
-        "Business Object",
-        "SAP Module"
-    ]
-
-    st.dataframe(
-        ranking_df,
-        use_container_width=True,
-        hide_index=True
-    )
-
-    st.divider()
-
-    # =================================================
-    # CHART 3
-    # TECHNICAL RELEVANCE
-    # =================================================
-
-    st.markdown(
-        "### 🔎 Retrieved Incident Technical Context"
-    )
-
-    technical_df = analytics_df[
-        [
-            "chart_label",
-            "business_object",
-            "module",
-            "category"
-        ]
-    ].copy()
-
-    technical_df.columns = [
-        "Incident",
-        "Business Object",
-        "SAP Module",
-        "Category"
-    ]
-
-    st.dataframe(
-        technical_df,
-        use_container_width=True,
-        hide_index=True
-    )
-
-    st.divider()
-
-    # =================================================
-    # CHART 4
-    # CONFIDENCE
-    # =================================================
-
-    st.markdown(
-        "### 🤖 AI Recommendation Confidence"
-    )
-
-    confidence_chart = pd.DataFrame({
-        "Metric": ["AI Recommendation"],
-        "Confidence": [confidence]
-    })
-
-    confidence_chart = confidence_chart.set_index(
-        "Metric"
-    )
-
-    st.bar_chart(
-        confidence_chart,
-        y="Confidence",
-        y_label="Confidence (%)",
-        x_label="",
-        use_container_width=True
-    )
-
-    st.caption(
-        "The confidence score represents the system's confidence "
-        "in the generated recommendation based on the retrieved knowledge."
-    )
-
-    st.divider()
-
-    # =================================================
-    # INTERPRETATION
-    # =================================================
-
-    st.markdown(
-        "### 📝 Retrieval Interpretation"
-    )
-
-    top_similarity = analytics_df.iloc[0]["similarity"]
-
-    if top_similarity >= 80:
-
-        st.success(
-            f"Strong retrieval match: the top incident has "
-            f"a similarity score of {top_similarity:.2f}%."
-        )
-
-    elif top_similarity >= 65:
-
-        st.info(
-            f"Moderate-to-strong retrieval match: the top incident "
-            f"has a similarity score of {top_similarity:.2f}%."
-        )
-
-    else:
-
-        st.warning(
-            f"Low retrieval similarity: the top incident has "
-            f"a similarity score of {top_similarity:.2f}%. "
-            f"Manual verification is recommended."
-        )
         st.divider()
 
         chart1, chart2 = st.columns(2)
