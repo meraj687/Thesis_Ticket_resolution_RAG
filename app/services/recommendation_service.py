@@ -107,18 +107,52 @@ class RecommendationService:
 
         # Diagnostic Steps
 
-        if not recommendation.get("diagnostic_steps"):
+        # if not recommendation.get("diagnostic_steps"):
+
+        #     recommendation["diagnostic_steps"] = (
+        #         best_record.diagnostic_steps
+        #     )
+
+        steps = recommendation.get("diagnostic_steps")
+
+        if(
+            not steps
+            or (
+                isinstance(steps , list)
+                and all(
+                    str(step).strip() == ""
+                    for step in steps
+                )
+            )
+        ):
 
             recommendation["diagnostic_steps"] = (
-                best_record.diagnostic_steps
-            )
+                best_record.diagnostic_steps    
+            )   
 
         # Recommended Resolution
 
-        if not recommendation.get("recommended_resolution"):
+        # if not recommendation.get("recommended_resolution"):
 
+        #     recommendation["recommended_resolution"] = (
+        #         best_record.recommended_resolution
+        #     )
+
+        resolution = recommendation.get("recommended_resolution")
+
+        if(
+            not resolution
+            or (
+                isinstance(resolution , list)
+                and all(
+                    str(res).strip() == ""
+                    for res in resolution
+                )
+            )
+        ):
+        
             recommendation["recommended_resolution"] = (
-                best_record.recommended_resolution
+                best_record.recommended_resolution    
             )
 
         # Department
@@ -146,59 +180,59 @@ class RecommendationService:
             )
 
         # =====================================================
-        # STEP 5 : Convert Strings to Lists
+        # STEP 5 : Normalize Recommendation Fields
         # =====================================================
 
-        if isinstance(
-            recommendation["root_cause"],
-            str
-        ):
+        for field in [
+            "root_cause",
+            "diagnostic_steps",
+            "recommended_resolution"
+        ]:
 
-            recommendation["root_cause"] = [
+            value = recommendation.get(
+                field,
+                []
+            )
 
-                item.strip()
+            # -------------------------------------------------
+            # Missing or None value
+            # -------------------------------------------------
 
-                for item in recommendation[
-                    "root_cause"
-                ].split(",")
+            if value is None:
 
-                if item.strip()
+                recommendation[field] = []
 
-            ]
+            # -------------------------------------------------
+            # LLM returned a string
+            # -------------------------------------------------
 
-        if isinstance(
-            recommendation["diagnostic_steps"],
-            str
-        ):
+            elif isinstance(value, str):
 
-            recommendation["diagnostic_steps"] = [
+                recommendation[field] = [
+                    item.strip()
+                    for item in value.split(",")
+                    if item.strip()
+                ]
 
-                item.strip()
+            # -------------------------------------------------
+            # LLM returned a list
+            # -------------------------------------------------
 
-                for item in recommendation[
-                    "diagnostic_steps"
-                ].split(",")
+            elif isinstance(value, list):
 
-                if item.strip()
+                recommendation[field] = [
+                    str(item).strip()
+                    for item in value
+                    if str(item).strip()
+                ]
 
-            ]
+            # -------------------------------------------------
+            # Unexpected data type
+            # -------------------------------------------------
 
-        if isinstance(
-            recommendation["recommended_resolution"],
-            str
-        ):
+            else:
 
-            recommendation["recommended_resolution"] = [
-
-                item.strip()
-
-                for item in recommendation[
-                    "recommended_resolution"
-                ].split(",")
-
-                if item.strip()
-
-            ]
+                recommendation[field] = []
 
         # =====================================================
         # STEP 6 : Confidence Calculation
@@ -218,22 +252,6 @@ class RecommendationService:
         )
 
         recommendation["confidence"] = confidence
-
-        # if confidence >= 95:
-
-        #     recommendation["confidence_level"] = "Very High"
-
-        # elif confidence >= 85:
-
-        #     recommendation["confidence_level"] = "High"
-
-        # elif confidence >= 70:
-
-        #     recommendation["confidence_level"] = "Medium"
-
-        # else:
-
-        #     recommendation["confidence_level"] = "Low"
 
         if confidence >= 90:
 
@@ -261,37 +279,22 @@ class RecommendationService:
 
         similar_incidents = []
 
-        seen = set()
-
         for item in results:
 
             record = item["record"]
-
-            if record.issue in seen:
-
-                continue
-
-            seen.add(record.issue)
+            similarity = min(item["similarity"], 1.0)  # Ensure similarity does not exceed 1.0
 
             similar_incidents.append({
-
                 "issue": record.issue,
-
                 "business_object": record.business_object,
-
                 "module": record.module,
-
                 "category": record.category,
-
                 "department": record.responsible_department,
-
                 "resolver_role": record.resolver_role,
-
                 "similarity": round(
-                    item["similarity"] * 100,
+                    similarity * 100,
                     2
                 )
-
             })
 
         # =====================================================
@@ -324,19 +327,11 @@ The confidence score is derived from the semantic similarity between the submitt
         response_time = round(time.time() - start_time, 3)
 
         return {
-
             "version": "1.0.0",
-
             "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
-
             "ticket": ticket,
-
             "response_time": response_time,
-
             "retrieved_records": len(records),
-
             "recommendation": recommendation,
-
             "similar_incidents": similar_incidents
-
         }

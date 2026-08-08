@@ -5,8 +5,21 @@ Enterprise Dashboard V2
 ====================================================
 """
 
+import json
+import os
+import sys
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
 import requests
 import streamlit as st
+
+# from app.utils.report_generator import generate_pdf
+import app.utils.report_generator as report_generator
+
+
 
 # =====================================================
 # CONFIGURATION
@@ -124,6 +137,62 @@ textarea{
 
 
 
+/* ==========================================
+Recommendation Card
+========================================== */
+
+.rec-card{
+
+    background:#1E2D42;
+
+    border:1px solid #2F4158;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    transition:.3s;
+
+}
+
+.rec-card:hover{
+
+    border:1px solid #4EA1FF;
+
+    transform:translateY(-3px);
+
+}
+
+.rec-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#55A3FF;
+
+    margin-bottom:10px;
+
+}
+
+.rec-body{
+
+    color:white;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
 
 </style>
 """, unsafe_allow_html=True)
@@ -152,6 +221,111 @@ def dashboard_card(icon, title, value):
 </div>
 """, unsafe_allow_html=True)
 
+# =====================================================
+# RECOMMENDATION CARD
+# =====================================================
+
+def recommendation_card(icon, title, body):
+
+    st.markdown(f"""
+<div class="rec-card">
+
+<div class="rec-header">
+
+<span>{icon}</span>
+
+<span>{title}</span>
+
+</div>
+
+<div class="rec-body">
+
+{body}
+
+</div>
+
+</div>
+""", unsafe_allow_html=True)
+
+# =====================================================
+# SIMILAR INCIDENT CARD
+# =====================================================
+
+def similar_incident_card(incident, index):
+
+    # similarity = incident.get("similarity", 0)
+
+    similarity = float(
+    incident.get("similarity", 0)
+    )
+
+    # Keep similarity between 0 and 100
+    similarity = max(
+        0,
+        min(similarity, 100)
+    )
+
+    st.markdown(
+        f"""
+<div class="rec-card">
+
+<div class="rec-header">
+
+<span>📄</span>
+
+<span>Similar Incident #{index}</span>
+
+</div>
+
+<div class="rec-body">
+
+<b>Issue</b><br>
+{incident.get("issue","")}<br><br>
+
+<table style="width:100%;border-collapse:collapse;">
+
+<tr>
+<td><b>Business Object</b></td>
+<td>{incident.get("business_object","")}</td>
+</tr>
+
+<tr>
+<td><b>SAP Module</b></td>
+<td>{incident.get("module","")}</td>
+</tr>
+
+<tr>
+<td><b>Category</b></td>
+<td>{incident.get("category","")}</td>
+</tr>
+
+<tr>
+<td><b>Department</b></td>
+<td>{incident.get("department","")}</td>
+</tr>
+
+<tr>
+<td><b>Resolver</b></td>
+<td>{incident.get("resolver_role","")}</td>
+</tr>
+
+<tr>
+<td><b>Semantic Match</b></td>
+<td>{similarity:.2f}%</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+""",
+        unsafe_allow_html=True
+    )
+
+    similarity = max(0,min(similarity,100))
+
+    st.progress(similarity / 100)
 
 # =====================================================
 # SIDEBAR
@@ -251,6 +425,17 @@ if analyze:
         {}
     )
 
+    # =====================================================
+    # GENERATE PDF REPORT
+    # =====================================================
+
+    # pdf_file = generate_pdf(
+    #     recommendation=recommendation,
+    #     ticket=ticket,
+    #     similar_incidents=similar,
+    #     response_time=result["response_time"]
+    # )
+
     similar = result.get(
         "similar_incidents",
         []
@@ -264,7 +449,22 @@ if analyze:
 
         st.stop()
 
-   # =====================================================
+    # =====================================================
+    # GENERATE PDF REPORT
+    # =====================================================
+
+    # pdf_file = generate_pdf(
+    #     recommendation=recommendation,
+    #     ticket=ticket,
+    #     similar_incidents=similar,
+    #     response_time=result["response_time"]
+    # )
+    pdf_file = report_generator.generate_pdf(
+        recommendation=recommendation,
+        ticket=ticket,
+        similar_incidents=similar,
+        response_time=result["response_time"]
+    )
 
     # =====================================================
     # AI PROCESSING WORKFLOW
@@ -426,18 +626,34 @@ if analyze:
         )
 
         if isinstance(steps, list):
+            steps = [
+                step.strip()
+                for step in steps
+                if str(step).strip()
+            ]
 
+        # st.write("Diagnostic steps:", steps)
+
+        if isinstance(steps, list):
             for i, step in enumerate(steps, start=1):
-
-                st.success(f"Step {i}")
-
-                st.write(step)
+                recommendation_card(
+                    "🔧",
+                    f"Step {i}",
+                    step
+                )
 
         else:
+            recommendation_card(
+                "🔧",
+                "Diagnostic",
+                steps
+            )
 
-            st.write(steps)
+        # =====================================================
+        # RECOMMENDED RESOLUTION
+        # =====================================================
 
-        st.markdown("### ✅ Recommended Resolution")
+        st.markdown("## ✅ Recommended Resolution")
 
         resolutions = recommendation.get(
             "recommended_resolution",
@@ -448,15 +664,22 @@ if analyze:
 
             for i, item in enumerate(resolutions, start=1):
 
-                st.success(f"Resolution {i}")
-
-                st.write(item)
+                recommendation_card(
+                    "✅",
+                    f"Resolution {i}",
+                    item
+                )
 
         else:
 
-            st.success(resolutions)
+            recommendation_card(
+                "✅",
+                "Resolution",
+                resolutions
+            )
 
     st.divider()
+
 
     # =====================================================
     # AI REASONING
@@ -522,6 +745,95 @@ if analyze:
     st.divider()
 
     # =====================================================
+    # KNOWLEDGE BASE ANALYTICS
+    # =====================================================
+
+    st.subheader("📊 SAP Knowledge Base Analytics")
+
+    import pandas as pd
+
+    analytics_df = pd.DataFrame(similar)
+
+    if not analytics_df.empty:
+
+        metric1, metric2, metric3, metric4 = st.columns(4)
+
+        with metric1:
+            st.metric(
+                "Retrieved Incidents",
+                len(analytics_df)
+            )
+
+        with metric2:
+            st.metric(
+                "Business Objects",
+                analytics_df["business_object"].nunique()
+            )
+
+        with metric3:
+            st.metric(
+                "SAP Modules",
+                analytics_df["module"].nunique()
+            )
+
+        with metric4:
+            st.metric(
+                "Departments",
+                analytics_df["department"].nunique()
+            )
+
+        st.divider()
+
+        chart1, chart2 = st.columns(2)
+
+        with chart1:
+
+            st.markdown("### 📦 Business Object Distribution")
+
+            business_counts = (
+                analytics_df["business_object"]
+                .value_counts()
+            )
+
+            st.bar_chart(business_counts)
+
+        with chart2:
+
+            st.markdown("### ⚙ SAP Module Distribution")
+
+            module_counts = (
+                analytics_df["module"]
+                .value_counts()
+            )
+
+            st.bar_chart(module_counts)
+
+        chart3, chart4 = st.columns(2)
+
+        with chart3:
+
+            st.markdown("### 🏢 Department Distribution")
+
+            dept_counts = (
+                analytics_df["department"]
+                .value_counts()
+            )
+
+            st.bar_chart(dept_counts)
+
+        with chart4:
+
+            st.markdown("### 🎯 Similarity Score")
+
+            similarity_chart = analytics_df.set_index(
+                "issue"
+            )["similarity"]
+
+            st.bar_chart(similarity_chart)
+
+    st.divider()
+
+    # =====================================================
     # SIMILAR INCIDENTS
     # =====================================================
 
@@ -529,89 +841,72 @@ if analyze:
 
     for i, incident in enumerate(similar, start=1):
 
-        with st.expander(
-            f"📄 Similar Incident #{i}"
-        ):
-
-            st.markdown("### Issue")
-
-            st.info(
-                incident.get(
-                    "issue",
-                    ""
-                )
-            )
-
-            c1, c2 = st.columns(2)
-
-            with c1:
-
-                st.write(
-                    "**Business Object:**",
-                    incident.get(
-                        "business_object",
-                        ""
-                    )
-                )
-
-                st.write(
-                    "**SAP Module:**",
-                    incident.get(
-                        "module",
-                        ""
-                    )
-                )
-
-                st.write(
-                    "**Category:**",
-                    incident.get(
-                        "category",
-                        ""
-                    )
-                )
-
-            with c2:
-
-                st.write(
-                    "**Department:**",
-                    incident.get(
-                        "department",
-                        ""
-                    )
-                )
-
-                st.write(
-                    "**Resolver:**",
-                    incident.get(
-                        "resolver_role",
-                        ""
-                    )
-                )
-
-                similarity = incident.get(
-                    "similarity",
-                    0
-                )
-
-                similarity = max(
-                    0,
-                    min(similarity, 100)
-                )
-
-                st.metric(
-                    "Semantic Match",
-                    f"{similarity:.2f}%"
-                )
-
-                st.progress(
-                    similarity / 100
-                )
+        similar_incident_card(
+            incident,
+            i
+        )
 
     st.divider()
 
+    # =====================================================
+    # EXPORT REPORTS
+    # =====================================================
+
+    st.divider()
+
+    st.subheader("📥 Export Reports")
+
+    col1, col2 = st.columns(2)
+
+    # =====================================================
+    # GENERATE PDF
+    # =====================================================
+
+    pdf_file = report_generator.generate_pdf(
+        recommendation=recommendation,
+        ticket=ticket,
+        similar_incidents=similar,
+        response_time=result["response_time"]
+    )
+
+    # =====================================================
+    # PDF DOWNLOAD
+    # =====================================================
+
+    with col1:
+
+        with open(pdf_file, "rb") as pdf:
+
+            st.download_button(
+                label="📄 Download Enterprise PDF Report",
+                data=pdf,
+                file_name="SAP_MDG_AI_Report.pdf",
+                mime="application/pdf",
+                use_container_width=True
+            )
+
+    # =====================================================
+    # JSON DOWNLOAD
+    # =====================================================
+
+    with col2:
+
+        st.download_button(
+            label="📜 Download Analysis JSON",
+            data=json.dumps(result, indent=4),
+            file_name="SAP_MDG_AI_Report.json",
+            mime="application/json",
+            use_container_width=True
+        )
+
+    st.divider()
+
+    st.success("✅ Analysis completed successfully. Reports are ready for download.")
+
     st.caption(
-        "Developed by Mohammad Aryaan | "
+        "SAP MDG Intelligent Support Assistant | "
+        "Master Thesis | "
         "MSc Artificial Intelligence | "
         "IU International University | "
-        "Master Thesis 2026"
+        "Developed by Mohammad Aryaan"
     )

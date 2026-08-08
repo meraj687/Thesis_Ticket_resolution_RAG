@@ -2398,5 +2398,270 @@
         "references": [
             "SAP Note Placeholder"
         ]
+    },
+    {
+        "id": 51,
+        "module": "MDG-INT",
+        "business_object": "Master Data Replication",
+        "category": "Outbound Queue",
+        "priority": "High",
+        "issue": "SMQ1 outbound queue is blocked and SAP MDG replication is not processing.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable.",
+            "DRF replication failure."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 outbound queue.",
+            "Check the queue status and identify blocked entries.",
+            "Check SM59 RFC destination.",
+            "Review DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Process or clear the blocked outbound queue after validating the failed entry.",
+            "Correct the RFC destination if the connection is unavailable.",
+            "Restart DRF replication after the queue issue is resolved."
+        ],
+        "sap_transactions": [
+            "SMQ1",
+            "SM59",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Integration Team",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "High",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Master data replication is delayed because outbound queue processing is blocked.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "SMQ1",
+            "Outbound Queue",
+            "Queue Blocked",
+            "Queue Stuck",
+            "DRF",
+            "Replication",
+            "RFC"
+        ],
+        "references": [
+            "Internal SAP MDG Knowledge Base"
+        ]
+    },
+    {
+        "id": 52,
+        "module": "MDG-INT",
+        "business_object": "Master Data Replication",
+        "category": "Outbound Queue",
+        "priority": "Medium",
+        "issue": "SMQ1 queue contains failed outbound messages after SAP MDG replication.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "Outbound queue blocked.",
+            "Incorrect DRF configuration."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check the status of failed outbound messages.",
+            "Check SM59 RFC connection.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Resolve the underlying RFC or DRF configuration issue.",
+            "Reprocess the affected outbound queue entries.",
+            "Retry the MDG replication."
+        ],
+        "sap_transactions": [
+            "SMQ1",
+            "SM59",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Integration Team",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Outbound master data messages are not being processed.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "SMQ1",
+            "Queue",
+            "Failed Messages",
+            "Outbound",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "Internal SAP MDG Knowledge Base"
+        ]
+    },
+    {
+        "id": 53,
+        "module": "MDG-INT",
+        "business_object": "Master Data Replication",
+        "category": "Replication",
+        "priority": "High",
+        "issue": "SAP MDG replication failed because outbound processing is stopped.",
+        "possible_root_causes": [
+            "Outbound queue blocked.",
+            "RFC destination unavailable.",
+            "SOA service unavailable."
+        ],
+        "diagnostic_steps": [
+            "Review SMQ1 queue.",
+            "Check SM59 connection.",
+            "Check DRFOUT configuration.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Resolve the outbound queue blockage.",
+            "Correct the RFC destination if required.",
+            "Restart DRF replication.",
+            "Retry the failed replication."
+        ],
+        "sap_transactions": [
+            "SMQ1",
+            "SM59",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Integration Team",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "High",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Master data replication is interrupted.",
+        "estimated_resolution_time": "24 Hours",
+        "sla": "24 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "Replication Failed",
+            "Outbound Queue",
+            "SMQ1",
+            "DRF",
+            "RFC"
+        ],
+        "references": [
+            "Internal SAP MDG Knowledge Base"
+        ]
+    },
+    {
+        "id": 54,
+        "module": "MDG-INT",
+        "business_object": "Master Data Replication",
+        "category": "RFC Connectivity",
+        "priority": "High",
+        "issue": "SAP MDG outbound replication failed because the RFC destination is unavailable.",
+        "possible_root_causes": [
+            "RFC destination unavailable.",
+            "RFC connection configuration problem."
+        ],
+        "diagnostic_steps": [
+            "Check SM59 RFC destination.",
+            "Test the RFC connection.",
+            "Review SLG1 application logs.",
+            "Review SMQ1 outbound queue.",
+            "Check DRFOUT configuration."
+        ],
+        "recommended_resolution": [
+            "Correct the RFC destination configuration.",
+            "Restore RFC connectivity.",
+            "Reprocess the affected outbound queue.",
+            "Retry DRF replication."
+        ],
+        "sap_transactions": [
+            "SM59",
+            "SMQ1",
+            "DRFOUT",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Integration Team",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "High",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "Outbound master data replication is interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L2",
+        "change_required": true,
+        "keywords": [
+            "RFC",
+            "SM59",
+            "RFC Destination",
+            "Replication",
+            "Outbound Queue",
+            "DRF"
+        ],
+        "references": [
+            "Internal SAP MDG Knowledge Base"
+        ]
+    },
+    {
+        "id": 55,
+        "module": "MDG-INT",
+        "business_object": "Master Data Replication",
+        "category": "DRF",
+        "priority": "Medium",
+        "issue": "SAP MDG replication is not working because DRF configuration requires review.",
+        "possible_root_causes": [
+            "Incorrect DRF configuration.",
+            "Outbound queue blocked.",
+            "RFC destination unavailable."
+        ],
+        "diagnostic_steps": [
+            "Check DRFOUT configuration.",
+            "Review SMQ1 queue.",
+            "Check SM59 RFC connection.",
+            "Review SLG1 application logs."
+        ],
+        "recommended_resolution": [
+            "Correct the DRF configuration.",
+            "Resolve any blocked outbound queue.",
+            "Correct the RFC destination if required.",
+            "Retry DRF replication."
+        ],
+        "sap_transactions": [
+            "DRFOUT",
+            "SMQ1",
+            "SM59",
+            "SLG1"
+        ],
+        "responsible_department": "SAP MDG Integration Team",
+        "support_team": "MDG Integration Support",
+        "resolver_role": "SAP MDG Technical Consultant",
+        "complexity": "Medium",
+        "business_process": "Master Data Governance",
+        "affected_system": "SAP MDG Hub",
+        "business_impact": "MDG replication processing is interrupted.",
+        "estimated_resolution_time": "8 Hours",
+        "sla": "8 Hours",
+        "escalation_level": "L1",
+        "change_required": false,
+        "keywords": [
+            "DRF",
+            "DRFOUT",
+            "DRF Configuration",
+            "Replication",
+            "SMQ1",
+            "RFC"
+        ],
+        "references": [
+            "Internal SAP MDG Knowledge Base"
+        ]
     }
 ]
