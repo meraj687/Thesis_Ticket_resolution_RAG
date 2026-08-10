@@ -573,7 +573,65 @@ class SemanticRetriever:
         # Return Top-K
         # -------------------------------------------------
 
-        results = candidates[:top_k]
+        # results = candidates[:top_k]
+
+        # -------------------------------------------------
+# STEP 5
+# Remove duplicate incidents
+# -------------------------------------------------
+
+        unique_candidates = []
+
+        seen_incidents = set()
+
+        for candidate in candidates:
+
+            record = candidate["record"]
+
+            issue = str(
+                getattr(record, "issue", "")
+            ).strip().lower()
+
+            business_object = str(
+                getattr(record, "business_object", "")
+            ).strip().lower()
+
+            module = str(
+                getattr(record, "module", "")
+            ).strip().lower()
+
+            category = str(
+                getattr(record, "category", "")
+            ).strip().lower()
+
+            incident_key = (
+                issue,
+                business_object,
+                module,
+                category
+            )
+
+            if incident_key in seen_incidents:
+                continue
+
+            seen_incidents.add(
+                incident_key
+            )
+
+            unique_candidates.append(
+                candidate
+            )
+
+            if len(unique_candidates) >= top_k:
+                break
+
+
+        # -------------------------------------------------
+        # STEP 6
+        # Return Top-K UNIQUE incidents
+        # -------------------------------------------------
+
+        results = unique_candidates
 
         # -------------------------------------------------
         # DEBUG INFORMATION

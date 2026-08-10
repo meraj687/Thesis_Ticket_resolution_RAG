@@ -80,25 +80,45 @@ textarea{
 /* Custom Card */
 
 .card{
-      background:#1E2D42;
-
+    background:#1E2D42;
     border:1px solid #2F4158;
-
     border-radius:15px;
-
-    padding:18px;
-
-    height:150px;
-
+    padding:20px;
+    min-height:150px;
+    width:100%;
+    box-sizing:border-box;
     display:flex;
-
     flex-direction:column;
-
     justify-content:space-between;
-
     transition:.3s;
-
     cursor:pointer;
+    margin-bottom:18px;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+    border:1px solid #4EA1FF;
+}
+
+.card-icon{
+    font-size:30px;
+    line-height:1;
+}
+
+.card-title{
+    color:#55A3FF;
+    font-size:18px;
+    font-weight:700;
+    margin-top:10px;
+}
+
+.card-value{
+    color:white;
+    font-size:30px;
+    font-weight:700;
+    line-height:1.2;
+    word-break:break-word;
 }
 
 .card:hover{
@@ -469,13 +489,13 @@ if analyze:
             .clip(0, 100)
         )
 
-        analytics_df["chart_label"] = [
-            f"Incident #{i}"
-            for i in range(
-                1,
-                len(analytics_df) + 1
-            )
-        ]
+        analytics_df["chart_label"] = (
+            analytics_df["issue"]
+            .fillna("Unknown incident")
+            .astype(str)
+            .str.replace("\n", " ", regex=False)
+            .str.slice(0, 50)
+        )
 
     # =====================================================
 # PREPARE ANALYTICS DATA
@@ -733,49 +753,72 @@ if analyze:
         st.divider()
 
     
-    # =====================================================
-    # PROCESSING SUMMARY
-    # =====================================================
 
-    st.subheader("📊 Processing Summary")
+# =====================================================
+# PROCESSING SUMMARY
+# =====================================================
 
-    c1, c2, c3, c4, c5 = st.columns(5)
+st.subheader("📊 Processing Summary")
 
-    with c1:
-        dashboard_card(
-            "📚",
-            "Records",
-            result["retrieved_records"]
-        )
+# -----------------------------
+# ROW 1
+# -----------------------------
 
-    with c2:
-        dashboard_card(
-            "🧠",
-            "Embedding",
-            "MiniLM-L6-v2"
-        )
+row1 = st.columns(2)
 
-    with c3:
-        dashboard_card(
-            "🔎",
-            "Vector DB",
-            "FAISS"
-        )
+with row1[0]:
 
-    with c4:
-        dashboard_card(
-            "🤖",
-            "LLM",
-            "Llama 3.2"
-        )
+    dashboard_card(
+        "📚",
+        "Records",
+        result["retrieved_records"]
+    )
 
-    with c5:
-        dashboard_card(
-            "⏱",
-            "Response",
-            f"{result['response_time']} sec"
-        )
+with row1[1]:
 
+    dashboard_card(
+        "🧠",
+        "Embedding",
+        "MiniLM-L6-v2"
+    )
+
+
+# -----------------------------
+# ROW 2
+# -----------------------------
+
+row2 = st.columns(2)
+
+with row2[0]:
+
+    dashboard_card(
+        "🔎",
+        "Vector DB",
+        "FAISS"
+    )
+
+with row2[1]:
+
+    dashboard_card(
+        "🤖",
+        "LLM",
+        "Llama 3.2"
+    )
+
+
+# -----------------------------
+# ROW 3
+# -----------------------------
+
+row3 = st.columns(2)
+
+with row3[0]:
+
+    dashboard_card(
+        "⏱",
+        "Response Time",
+        f"{result['response_time']} sec"
+    )
     st.divider()
 
     # =====================================================
@@ -871,7 +914,7 @@ if analyze:
         similarity_chart,
         y="similarity",
         y_label="Similarity (%)",
-        x_label="Retrieved Incident",
+        x_label="Retrieved SAP MDG Incident",
         use_container_width=True
     )
 
@@ -964,38 +1007,6 @@ if analyze:
 
     st.divider()
 
-    # =================================================
-    # CHART 4
-    # CONFIDENCE
-    # =================================================
-
-    st.markdown(
-        "### 🤖 AI Recommendation Confidence"
-    )
-
-    confidence_chart = pd.DataFrame({
-        "Metric": ["AI Recommendation"],
-        "Confidence": [confidence]
-    })
-
-    confidence_chart = confidence_chart.set_index(
-        "Metric"
-    )
-
-    st.bar_chart(
-        confidence_chart,
-        y="Confidence",
-        y_label="Confidence (%)",
-        x_label="",
-        use_container_width=True
-    )
-
-    st.caption(
-        "The confidence score represents the system's confidence "
-        "in the generated recommendation based on the retrieved knowledge."
-    )
-
-    st.divider()
 
     # =================================================
     # INTERPRETATION
@@ -1028,54 +1039,6 @@ if analyze:
             f"a similarity score of {top_similarity:.2f}%. "
             f"Manual verification is recommended."
         )
-        st.divider()
-
-        chart1, chart2 = st.columns(2)
-
-        with chart1:
-
-            st.markdown("### 📦 Business Object Distribution")
-
-            business_counts = (
-                analytics_df["business_object"]
-                .value_counts()
-            )
-
-            st.bar_chart(business_counts)
-
-        with chart2:
-
-            st.markdown("### ⚙ SAP Module Distribution")
-
-            module_counts = (
-                analytics_df["module"]
-                .value_counts()
-            )
-
-            st.bar_chart(module_counts)
-
-        chart3, chart4 = st.columns(2)
-
-        with chart3:
-
-            st.markdown("### 🏢 Department Distribution")
-
-            dept_counts = (
-                analytics_df["department"]
-                .value_counts()
-            )
-
-            st.bar_chart(dept_counts)
-
-        with chart4:
-
-            st.markdown("### 🎯 Similarity Score")
-
-            similarity_chart = analytics_df.set_index(
-                "issue"
-            )["similarity"]
-
-            st.bar_chart(similarity_chart)
 
     st.divider()
 
