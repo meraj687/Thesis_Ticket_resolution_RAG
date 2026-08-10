@@ -96,38 +96,18 @@ textarea{
 }
 
 .card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
-    border:1px solid #4EA1FF;
-}
-
-.card-icon{
-    font-size:30px;
-    line-height:1;
-}
-
-.card-title{
-    color:#55A3FF;
-    font-size:18px;
-    font-weight:700;
-    margin-top:10px;
-}
-
-.card-value{
-    color:white;
-    font-size:30px;
-    font-weight:700;
-    line-height:1.2;
-    word-break:break-word;
-}
-
-.card:hover{
-     transform:translateY(-5px);
-
+    transform:translateY(-4px);
     box-shadow:0 10px 20px rgba(0,0,0,.25);
-
     border:1px solid #4EA1FF;
 }
+
+# .card:hover{
+#      transform:translateY(-5px);
+
+#     box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+#     border:1px solid #4EA1FF;
+# }
 
 .card-icon{
 
@@ -498,12 +478,6 @@ if analyze:
         )
 
     # =====================================================
-# PREPARE ANALYTICS DATA
-# =====================================================
-
-
-
-    # =====================================================
     # GENERATE PDF REPORT
     # =====================================================
 
@@ -753,72 +727,72 @@ if analyze:
         st.divider()
 
     
+    # =====================================================
+    # PROCESSING SUMMARY
+    # =====================================================
 
-# =====================================================
-# PROCESSING SUMMARY
-# =====================================================
+    st.subheader("📊 Processing Summary")
 
-st.subheader("📊 Processing Summary")
+    # -----------------------------
+    # ROW 1
+    # -----------------------------
 
-# -----------------------------
-# ROW 1
-# -----------------------------
+    row1 = st.columns(2)
 
-row1 = st.columns(2)
+    with row1[0]:
 
-with row1[0]:
+        dashboard_card(
+            "📚",
+            "Records",
+            len(similar)
+        )
 
-    dashboard_card(
-        "📚",
-        "Records",
-        result["retrieved_records"]
-    )
+    with row1[1]:
 
-with row1[1]:
-
-    dashboard_card(
-        "🧠",
-        "Embedding",
-        "MiniLM-L6-v2"
-    )
-
-
-# -----------------------------
-# ROW 2
-# -----------------------------
-
-row2 = st.columns(2)
-
-with row2[0]:
-
-    dashboard_card(
-        "🔎",
-        "Vector DB",
-        "FAISS"
-    )
-
-with row2[1]:
-
-    dashboard_card(
-        "🤖",
-        "LLM",
-        "Llama 3.2"
-    )
+        dashboard_card(
+            "🧠",
+            "Embedding",
+            "MiniLM-L6-v2"
+        )
 
 
-# -----------------------------
-# ROW 3
-# -----------------------------
+    # -----------------------------
+    # ROW 2
+    # -----------------------------
 
-row3 = st.columns(2)
+    row2 = st.columns(2)
 
-with row3[0]:
+    with row2[0]:
 
-    dashboard_card(
-        "⏱",
-        "Response Time",
-        f"{result['response_time']} sec"
-    )
+        dashboard_card(
+            "🔎",
+            "Vector DB",
+            "FAISS"
+        )
+
+    with row2[1]:
+
+        dashboard_card(
+            "🤖",
+            "LLM",
+            "Llama 3.2"
+        )
+
+
+    # -----------------------------
+    # ROW 3
+    # -----------------------------
+
+    row3 = st.columns(2)
+
+    with row3[0]:
+
+        dashboard_card(
+            "⏱",
+            "Response Time",
+            f"{result['response_time']} sec"
+        )
+
     st.divider()
 
     # =====================================================
@@ -1007,6 +981,38 @@ with row3[0]:
 
     st.divider()
 
+    # =================================================
+    # CHART 4
+    # CONFIDENCE
+    # =================================================
+
+    # st.markdown(
+    #     "### 🤖 AI Recommendation Confidence"
+    # )
+
+    # confidence_chart = pd.DataFrame({
+    #     "Metric": ["AI Recommendation"],
+    #     "Confidence": [confidence]
+    # })
+
+    # confidence_chart = confidence_chart.set_index(
+    #     "Metric"
+    # )
+
+    # st.bar_chart(
+    #     confidence_chart,
+    #     y="Confidence",
+    #     y_label="Confidence (%)",
+    #     x_label="",
+    #     use_container_width=True
+    # )
+
+    # st.caption(
+    #     "The confidence score represents the system's confidence "
+    #     "in the generated recommendation based on the retrieved knowledge."
+    # )
+
+    st.divider()
 
     # =================================================
     # INTERPRETATION
@@ -1039,8 +1045,56 @@ with row3[0]:
             f"a similarity score of {top_similarity:.2f}%. "
             f"Manual verification is recommended."
         )
+        st.divider()
 
-    st.divider()
+        # chart1, chart2 = st.columns(2)
+
+        # with chart1:
+
+        #     st.markdown("### 📦 Business Object Distribution")
+
+        #     business_counts = (
+        #         analytics_df["business_object"]
+        #         .value_counts()
+        #     )
+
+        #     st.bar_chart(business_counts)
+
+        # with chart2:
+
+        #     st.markdown("### ⚙ SAP Module Distribution")
+
+        #     module_counts = (
+        #         analytics_df["module"]
+        #         .value_counts()
+        #     )
+
+        #     st.bar_chart(module_counts)
+
+        # chart3, chart4 = st.columns(2)
+
+        # with chart3:
+
+        #     st.markdown("### 🏢 Department Distribution")
+
+        #     dept_counts = (
+        #         analytics_df["department"]
+        #         .value_counts()
+        #     )
+
+        #     st.bar_chart(dept_counts)
+
+        # with chart4:
+
+        #     st.markdown("### 🎯 Similarity Score")
+
+        #     similarity_chart = analytics_df.set_index(
+        #         "issue"
+        #     )["similarity"]
+
+        #     st.bar_chart(similarity_chart)
+
+    # st.divider()
 
     # =====================================================
     # SIMILAR INCIDENTS
