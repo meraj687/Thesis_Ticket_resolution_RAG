@@ -441,13 +441,90 @@ if analyze:
         []
     )
 
-    if len(similar) == 0:
+
+
+
+# =====================================================
+# NO SIMILAR INCIDENTS
+# =====================================================
+
+# if len(similar) == 0:
+
+#     st.warning(
+#         "No similar SAP MDG incidents were found."
+#     )
+
+#     st.stop()
+
+
+    similar = result.get(
+        "similar_incidents",
+        []
+    )
+
+    # =====================================================
+    # SAP MDG RELEVANCE REJECTION
+    # =====================================================
+
+    if result.get("status") == "rejected":
+
+        st.error(
+            "🚫 Ticket Not Related to SAP MDG"
+        )
 
         st.warning(
-            "No similar incidents were found."
+            result.get(
+                "rejection_reason",
+                "The submitted ticket could not be matched "
+                "to the SAP MDG knowledge base."
+            )
+        )
+
+        similarity_score = result.get(
+            "similarity_score",
+            result.get(
+                "recommendation",
+                {}
+            ).get(
+                "confidence",
+                0
+            )
+        )
+
+        st.info(
+            f"🔎 Similarity Score: "
+            f"{float(similarity_score):.2f}%"
+        )
+
+        st.markdown(
+            """
+            ### 📩 Please Submit an SAP MDG-Related Ticket
+
+            The submitted ticket does not appear to be related
+            to SAP Master Data Governance (SAP MDG) based on
+            the available knowledge base.
+
+            Please review the ticket and submit an
+            **SAP MDG-related support ticket** to analyze it again.
+            """
         )
 
         st.stop()
+
+
+    # =====================================================
+    # NO SIMILAR INCIDENTS
+    # =====================================================
+
+    if len(similar) == 0:
+
+        st.warning(
+            "No similar SAP MDG incidents were found."
+        )
+
+        st.stop()
+
+
 
 # =====================================================
 # PREPARE ANALYTICS DATA
